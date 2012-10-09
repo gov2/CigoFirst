@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "MasterViewController.h"
+#import "Utility.h"
 
 @implementation AppDelegate
 
