@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F082AC2716257A190031528B /* CalculatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F082AC2616257A190031528B /* CalculatorView.xib */; };
+		F08A088E16258217009BB29D /* CalculatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = F08A088D16258217009BB29D /* CalculatorView.m */; };
 		F0D457B816244768000B6B87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D457B716244768000B6B87 /* UIKit.framework */; };
 		F0D457BA16244768000B6B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D457B916244768000B6B87 /* Foundation.framework */; };
 		F0D457BC16244768000B6B87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D457BB16244768000B6B87 /* CoreGraphics.framework */; };
@@ -47,7 +49,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F0D457B316244768000B6B87 /* CigoFirst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CigoFirst.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F082AC2616257A190031528B /* CalculatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculatorView.xib; sourceTree = "<group>"; };
+		F08A088C16258217009BB29D /* CalculatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorView.h; sourceTree = "<group>"; };
+		F08A088D16258217009BB29D /* CalculatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorView.m; sourceTree = "<group>"; };
+		F0D457B316244768000B6B87 /* CigoTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CigoTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D457B716244768000B6B87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F0D457B916244768000B6B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F0D457BB16244768000B6B87 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -129,7 +134,7 @@
 		F0D457B416244768000B6B87 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F0D457B316244768000B6B87 /* CigoFirst.app */,
+				F0D457B316244768000B6B87 /* CigoTour.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				F0D457D716244768000B6B87 /* CigoFirst.xcdatamodeld */,
 				F0D457D116244768000B6B87 /* MainStoryboard_iPhone.storyboard */,
 				F0D457D416244768000B6B87 /* MainStoryboard_iPad.storyboard */,
+				F082AC2616257A190031528B /* CalculatorView.xib */,
 			);
 			name = Resources;
 			path = ..;
@@ -205,6 +211,8 @@
 				F0D457DE16244768000B6B87 /* DetailViewController.m */,
 				F0D457F016244E4D000B6B87 /* Utility.h */,
 				F0D457F116244E4D000B6B87 /* Utility.m */,
+				F08A088C16258217009BB29D /* CalculatorView.h */,
+				F08A088D16258217009BB29D /* CalculatorView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -402,7 +410,7 @@
 			);
 			name = CigoTour;
 			productName = CigoFirst;
-			productReference = F0D457B316244768000B6B87 /* CigoFirst.app */;
+			productReference = F0D457B316244768000B6B87 /* CigoTour.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -454,6 +462,7 @@
 				F0D4580F162454E9000B6B87 /* blueArrow@2x.png in Resources */,
 				F0D45810162454E9000B6B87 /* blueArrowDown.png in Resources */,
 				F0D45811162454E9000B6B87 /* blueArrowDown@2x.png in Resources */,
+				F082AC2716257A190031528B /* CalculatorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +487,7 @@
 				F0D4582F1624554E000B6B87 /* EGOImageLoadConnection.m in Sources */,
 				F0D458301624554E000B6B87 /* EGOImageLoader.m in Sources */,
 				F0D458311624554E000B6B87 /* EGOImageView.m in Sources */,
+				F08A088E16258217009BB29D /* CalculatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +615,7 @@
 				F0D457E416244768000B6B87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
