@@ -11,12 +11,14 @@
 @class DetailViewController;
 
 #import <CoreData/CoreData.h>
+#import "AddContactViewController.h"
 
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, AddContactDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
+@property (strong, nonatomic) NSDictionary *fetchedResultsControllers;
+@property (strong, nonatomic) NSDictionary *managedObjectContexts;
 @end

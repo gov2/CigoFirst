@@ -12,5 +12,5 @@
 
 + (void) showHUD: (NSString*) msg;
 + (void) removeHUD;
-
++ (void) showHUD:(NSString *)msg withTime:(NSUInteger) duration;
 @end

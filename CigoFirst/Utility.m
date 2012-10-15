@@ -10,6 +10,11 @@
 #import "MBProgressHUD.h"
 
 static MBProgressHUD *HUD;
+static NSTimer *timer;
+
+@interface Utility()
++ (void)removeHUDOnTimeOut;
+@end
 
 @implementation Utility
 
@@ -25,5 +30,28 @@ static MBProgressHUD *HUD;
 	[HUD removeFromSuperViewOnHide];
 	[HUD release];
 }
+
++ (void)removeHUDOnTimeOut{
+	[HUD hide:YES];
+	[HUD removeFromSuperViewOnHide];
+	[HUD release];
+    [timer invalidate];
+    [timer release];
+    timer  = nil;
+}
+
++ (void) showHUD:(NSString *)msg withTime:(NSUInteger)duration {
+    if (timer.isValid) {
+        [Utility removeHUDOnTimeOut];
+    }
+    [Utility showHUD: msg];
+    timer = [NSTimer scheduledTimerWithTimeInterval: duration
+                                             target: [Utility class]
+                                           selector: @selector(removeHUDOnTimeOut)
+                                           userInfo: nil
+                                            repeats: NO] ;
+    [timer fire];
+}
+
 
 @end

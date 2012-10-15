@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @protocol CalculatorDelegate;
-@interface CalculatorView : UIView
+@interface CalculatorView : UIView {
+    float currentNumber;
+    int currentOperator;
+}
 
 @property (nonatomic) float result;
 @property (nonatomic, copy) NSString* expression;

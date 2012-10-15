@@ -9,12 +9,18 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
+#import "AddContactViewController.h"
+#import "User.h"
 
-@interface MasterViewController ()
+@interface MasterViewController (){
+    NSInteger selectedIndex;
+}
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+@property (nonatomic, strong) NSArray* users;
 @end
 
 @implementation MasterViewController
+@synthesize users = _users;
 
 - (void)awakeFromNib
 {
@@ -28,6 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    selectedIndex = 0;
 	// Do any additional setup after loading the view, typically from a nib.
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
@@ -66,19 +73,29 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count];
+    //return [[self.fetchedResultsController sections] count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
-    return [sectionInfo numberOfObjects];
+    return self.users.count;
+}
+
+- (NSArray*) users
+{
+    if (!_users) {
+        _users = [User findAll];
+    }
+    return _users;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    [self configureCell:cell atIndexPath:indexPath];
+    //[self configureCell:cell atIndexPath:indexPath];
+    User *user = (User*)[_users objectAtIndex:indexPath.row];
+    cell.textLabel.text = user.name;
     return cell;
 }
 
@@ -113,7 +130,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        NSManagedObject *object = [_users objectAtIndex:indexPath.row];
         self.detailViewController.detailItem = object;
     }
 }
@@ -122,8 +139,12 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        //NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        NSManagedObject *object = [_users objectAtIndex:indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
+    }
+    else if ([[segue identifier] isEqualToString: @"showAddContactView"]) {
+        [[[[segue destinationViewController] viewControllers] objectAtIndex:0] setDelegate:self];
     }
 }
 
@@ -185,8 +206,10 @@
     }
 }
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
-       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
     UITableView *tableView = self.tableView;
@@ -231,5 +254,24 @@
     NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
 }
+
+
+#pragma mark - Add sighting delegate
+- (void) contactAddFinished:(AddContactViewController *)addContactView withName:(NSString *)contactName phone:(NSString *)phoneNum andImage:(UIImage *)image {
+    if (contactName.length > 0) {
+        User *user = [User MR_createEntity];
+        user.name = contactName;
+        user.phone = phoneNum;
+        [[NSManagedObjectContext MR_defaultContext]MR_save];
+        _users = [User findAll];
+        [self.tableView reloadData];
+    }
+    [self dismissViewControllerAnimated:YES completion:NULL ];
+}
+
+- (void) contactAddCanceled:(AddContactViewController *)addContactView {
+    [self dismissViewControllerAnimated:YES completion:NULL ];
+}
+
 
 @end
