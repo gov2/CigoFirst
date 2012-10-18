@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@protocol  CalculatorDelegate;
 
+@protocol  CalculatorDelegate;
 @interface AddEntryViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, CalculatorDelegate>
 
 @end

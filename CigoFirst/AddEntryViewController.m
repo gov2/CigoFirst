@@ -6,10 +6,16 @@
 //  Copyright (c) 2012年 cigo. All rights reserved.
 //
 
-#import "AddEntryViewController.h"
 #import "CalculatorView.h"
+#import "User.h"
+#import "Entry.h"
 
-@interface AddEntryViewController ()
+#import "AddEntryViewController.h"
+
+@interface AddEntryViewController (){
+    NSArray *_users;
+    NSDictionary *_usersEntry;
+}
 
 @end
 
@@ -34,6 +40,7 @@
     [calView setBackgroundColor:[ UIColor colorWithRed:36 green:37 blue:51 alpha:1]];
     calView.delegate = self;
     [self.view addSubview: calView];
+    _usersEntry = [self initializeDataSource];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,11 +52,20 @@
 
 #pragma mark - Picker view data source
 - (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return component * 2 + 1;
+    switch (component) {
+        case 0:
+            return [_usersEntry count];
+            break;
+        case 1:
+            return [[_usersEntry objectForKey:[[_users objectAtIndex:0] name]] count];
+        default:
+            return 0;
+            break;
+    }
 }
 
 - (NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 3;
+    return 2;
 }
 
 #pragma mark - Picker view delegate
@@ -100,6 +116,19 @@
 - (void)calculator:(CalculatorView *)calculatorView withResult:(float)result
 {
     
+}
+
+- (NSDictionary *) initializeDataSource
+{
+    _users = [User findAll];
+    NSMutableDictionary *entries = [[NSMutableDictionary alloc] initWithCapacity: _users.count];
+    for (User* user in _users) {
+        NSArray *entry = [Entry findByAttribute:@"user" withValue:user];
+        NSMutableArray *me = [[NSMutableArray alloc] initWithArray: entry];
+        [entries setValue: me forKey: user.name];
+    }
+    
+    return entries;
 }
 
 @end

@@ -138,10 +138,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         //NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        NSManagedObject *object = [_users objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        //NSManagedObject *object = [_users objectAtIndex:indexPath.row];
+        //[[segue destinationViewController] setDetailItem:object];
     }
     else if ([[segue identifier] isEqualToString: @"showAddContactView"]) {
         [[[[segue destinationViewController] viewControllers] objectAtIndex:0] setDelegate:self];

@@ -191,8 +191,9 @@
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
-    if (textField == _nameInput || textField == _phoneInput) {
-        [textField resignFirstResponder];
+    [textField resignFirstResponder];
+    if (textField == _nameInput ) {
+        [_phoneInput becomeFirstResponder];
     }
     return YES;
 }

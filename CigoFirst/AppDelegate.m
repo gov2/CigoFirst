@@ -11,17 +11,21 @@
 #import "MasterViewController.h"
 #import "Utility.h"
 
+#pragma mark Private Interface
+
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //Magical Record
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"CigoFirst.sqlite"];
     
+    // Side bar
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -32,9 +36,9 @@
         MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     } else {
-        UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-        MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
-        controller.managedObjectContext = self.managedObjectContext;
+        //UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+        //MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
+        //controller.managedObjectContext = self.managedObjectContext;
     }
     return YES;
 }

@@ -19,6 +19,4 @@
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) NSDictionary *fetchedResultsControllers;
-@property (strong, nonatomic) NSDictionary *managedObjectContexts;
 @end
