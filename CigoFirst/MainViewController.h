@@ -12,5 +12,6 @@
 @protocol AddProjectViewDelegate;
 
 @interface MainViewController : UIViewController <AddProjectViewDelegate, iCarouselDataSource, iCarouselDelegate>
+- (IBAction)newProjectPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet iCarousel *coverflowControl;
 @end

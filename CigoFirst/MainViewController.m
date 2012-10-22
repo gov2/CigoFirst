@@ -8,11 +8,15 @@
 #import "AddProjectViewController.h"
 #import "Project.h"
 #import "MainViewController.h"
+#import "NewProjectViewController.h"
+#import "NewProjectDataSource.h"
 
 #define ITEM_SPACING 210.0f
 #define INCLUDE_PLACEHOLDERS YES
 
-@interface MainViewController ()
+@interface MainViewController () {
+    NewProjectViewController *newProjectViewController_;
+}
 @property (nonatomic, strong) NSArray *projects;
 @end
 
@@ -47,6 +51,16 @@
         AddProjectViewController *addProejctView =[[[segue destinationViewController] viewControllers] objectAtIndex:0];
         [addProejctView setDelegate:self];
     }
+    /*
+    else if ([[segue identifier] isEqualToString:@"NewProjectView"]){
+        Project *project = [ Project MR_createEntity];
+        NewProjectDataSource *newProjectDataSource = [[NewProjectDataSource alloc] initWithModel:project];
+        UIViewController *viewContorller =[[[segue destinationViewController] viewControllers] objectAtIndex:0];
+        NewProjectViewController *newProjectView = (NewProjectViewController*)viewContorller;
+        
+        newProjectView.formDataSource = newProjectDataSource;
+    }
+    */
 }
 
 - (void)projectAddCanceled:(AddProjectViewController *)addProjectView
@@ -54,7 +68,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)projectAddFinished:(AddProjectViewController *)addProjectView withName:(NSString *)name limitTime:(NSDate *)date notification:(BOOL)shouldNofice andUsers:(NSArray *)users
+- (void)projectAddFinished:(AddProjectViewController *)addProjectView
+                  withName:(NSString *)name
+                 limitTime:(NSDate *)date
+              notification:(BOOL)shouldNofice
+                  andUsers:(NSArray *)users
 {
     if (name.length > 0) {
         Project *project = [Project MR_createEntity];
@@ -82,7 +100,7 @@
         [self performSegueWithIdentifier:@"AddProjectView" sender: self];
     }
     else{
-        [self performSegueWithIdentifier:@"AddEntryView" sender: self];
+        [self performSegueWithIdentifier:@"showProjectDetailView" sender: self];
     }
 }
 
@@ -145,4 +163,38 @@
     return CATransform3DTranslate(transform, 0.0f, 0.0f, offset * _coverflowControl.itemWidth);
 }
 
+- (IBAction)newProjectPressed:(id)sender {
+    Project *project = [ Project MR_createEntity];
+    NewProjectDataSource *newProjectDataSource = [[NewProjectDataSource alloc] initWithModel:project];
+    newProjectViewController_ =[[NewProjectViewController alloc] initWithNibName:nil bundle:nil formDataSource:newProjectDataSource];
+    [[IBAInputManager sharedIBAInputManager] setInputNavigationToolbarEnabled:YES];
+    
+	UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    UIBarButtonItem *doneButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                 target:self
+                                                                                 action:@selector(createNewProjectForm)] autorelease];
+    UIBarButtonItem *cancelButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                 target:self
+                                                                                 action:@selector(dismissNewProjectForm)] autorelease];
+    
+    newProjectViewController_.navigationItem.rightBarButtonItem = doneButton;
+    newProjectViewController_.navigationItem.leftBarButtonItem = cancelButton;
+    UINavigationController *formNavigationController = [[[UINavigationController alloc] initWithRootViewController:newProjectViewController_] autorelease];
+    formNavigationController.modalPresentationStyle = UIModalPresentationPageSheet;
+    [rootViewController presentModalViewController:formNavigationController animated:YES];
+}
+
+- (void)createNewProjectForm {
+    if ([newProjectViewController_ formDataSource]) {
+        Project *project = [newProjectViewController_ formDataSource].model;
+        if (project && [project.name length] > 0) {
+            [[NSManagedObjectContext MR_defaultContext]MR_save];
+        }
+    }
+	[[[[UIApplication sharedApplication] keyWindow] rootViewController] dismissModalViewControllerAnimated:YES];
+}
+
+- (void)dismissNewProjectForm {
+    [[[[UIApplication sharedApplication] keyWindow] rootViewController] dismissModalViewControllerAnimated:YES];
+}
 @end

@@ -39,6 +39,8 @@
         //UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
         //MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
         //controller.managedObjectContext = self.managedObjectContext;
+        UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+        [navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"top_line_bg.png"] forBarMetrics: UIBarMetricsDefault];   
     }
     return YES;
 }

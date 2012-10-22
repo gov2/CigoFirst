@@ -16,6 +16,10 @@
 		F02C2A41162D0E3B00D49F04 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C2A40162D0E3A00D49F04 /* MainViewController.m */; };
 		F02C2A4C162D828900D49F04 /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = F02C2A4B162D828900D49F04 /* page.png */; };
 		F02C2A50162D84E800D49F04 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C2A4F162D84E800D49F04 /* iCarousel.m */; };
+		F0744EA0162FE37A0083D753 /* libIBAForms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0744E9E162FDAA00083D753 /* libIBAForms.a */; };
+		F0744EC81630EA0D0083D753 /* NewProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0744EC71630EA0D0083D753 /* NewProjectViewController.m */; };
+		F0744F121630EE210083D753 /* NewProjectDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F0744F111630EE210083D753 /* NewProjectDataSource.m */; };
+		F0744F6116311F840083D753 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0744F6316311F840083D753 /* Localizable.strings */; };
 		F082AC2716257A190031528B /* CalculatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F082AC2616257A190031528B /* CalculatorView.xib */; };
 		F08A088E16258217009BB29D /* CalculatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = F08A088D16258217009BB29D /* CalculatorView.m */; };
 		F0BD983D162AA9C400659295 /* AddEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BD983C162AA9C400659295 /* AddEntryViewController.m */; };
@@ -56,7 +60,6 @@
 		F0D457CE16244768000B6B87 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D457CD16244768000B6B87 /* Default@2x.png */; };
 		F0D457D016244768000B6B87 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D457CF16244768000B6B87 /* Default-568h@2x.png */; };
 		F0D457D316244768000B6B87 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0D457D116244768000B6B87 /* MainStoryboard_iPhone.storyboard */; };
-		F0D457D616244768000B6B87 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0D457D416244768000B6B87 /* MainStoryboard_iPad.storyboard */; };
 		F0D457D916244768000B6B87 /* CigoFirst.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0D457D716244768000B6B87 /* CigoFirst.xcdatamodeld */; };
 		F0D457DC16244768000B6B87 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D457DB16244768000B6B87 /* MasterViewController.m */; };
 		F0D457DF16244768000B6B87 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D457DE16244768000B6B87 /* DetailViewController.m */; };
@@ -82,9 +85,33 @@
 		F0D458301624554E000B6B87 /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D4581E1624554E000B6B87 /* EGOImageLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F0D458311624554E000B6B87 /* EGOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D458211624554E000B6B87 /* EGOImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F0D4583416245630000B6B87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0D4583216245623000B6B87 /* QuartzCore.framework */; };
+		F0E678C216354891004B2306 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = F0E678C116354891004B2306 /* banner.png */; };
+		F0E678C416354B1C004B2306 /* tl_create.png in Resources */ = {isa = PBXBuildFile; fileRef = F0E678C316354B1C004B2306 /* tl_create.png */; };
+		F0E678CF163556D2004B2306 /* bgnoise.png in Resources */ = {isa = PBXBuildFile; fileRef = F0E678CE163556D2004B2306 /* bgnoise.png */; };
+		F0E678D216355830004B2306 /* ProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E678D116355830004B2306 /* ProjectDetailViewController.m */; };
+		F0E678D4163560B8004B2306 /* top_line_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F0E678D3163560B8004B2306 /* top_line_bg.png */; };
+		F0E678DB16357045004B2306 /* ProjectEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E678DA16357045004B2306 /* ProjectEntryCell.m */; };
+		F0E678DF163571A7004B2306 /* UINavigationBar+CGDropShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E678DE163571A7004B2306 /* UINavigationBar+CGDropShadow.m */; };
 		F0FDECD616259D0A00EFF6DF /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FDECD516259D0A00EFF6DF /* AddContactViewController.m */; };
 		F0FDECE51625AA2200EFF6DF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FDECE41625AA2200EFF6DF /* User.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F0744E9D162FDAA00083D753 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0744E96162FDA9F0083D753 /* IBAForms.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = IBAForms;
+		};
+		F0744F5B16310E000083D753 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0744E96162FDA9F0083D753 /* IBAForms.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = IBAForms;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F00E7C85162E432B0004FB9B /* NSObject+Subscripts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Subscripts.h"; sourceTree = "<group>"; };
@@ -103,6 +130,12 @@
 		F02C2A4B162D828900D49F04 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
 		F02C2A4E162D84E800D49F04 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		F02C2A4F162D84E800D49F04 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		F0744E96162FDA9F0083D753 /* IBAForms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IBAForms.xcodeproj; path = ../IBAForms/library/IBAForms.xcodeproj; sourceTree = "<group>"; };
+		F0744EC61630EA0D0083D753 /* NewProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProjectViewController.h; sourceTree = "<group>"; };
+		F0744EC71630EA0D0083D753 /* NewProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProjectViewController.m; sourceTree = "<group>"; };
+		F0744F101630EE210083D753 /* NewProjectDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProjectDataSource.h; sourceTree = "<group>"; };
+		F0744F111630EE210083D753 /* NewProjectDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProjectDataSource.m; sourceTree = "<group>"; };
+		F0744F6216311F840083D753 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F082AC2616257A190031528B /* CalculatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculatorView.xib; sourceTree = "<group>"; };
 		F08A088C16258217009BB29D /* CalculatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorView.h; sourceTree = "<group>"; };
 		F08A088D16258217009BB29D /* CalculatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorView.m; sourceTree = "<group>"; };
@@ -177,7 +210,6 @@
 		F0D457CD16244768000B6B87 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F0D457CF16244768000B6B87 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F0D457D216244768000B6B87 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		F0D457D516244768000B6B87 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		F0D457D816244768000B6B87 /* CigoFirst.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CigoFirst.xcdatamodel; sourceTree = "<group>"; };
 		F0D457DA16244768000B6B87 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		F0D457DB16244768000B6B87 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
@@ -214,6 +246,16 @@
 		F0D458201624554E000B6B87 /* EGOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageView.h; sourceTree = "<group>"; };
 		F0D458211624554E000B6B87 /* EGOImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageView.m; sourceTree = "<group>"; };
 		F0D4583216245623000B6B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F0E678C116354891004B2306 /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner.png; path = "../../../Desktop/设计界面材料/banner.png"; sourceTree = "<group>"; };
+		F0E678C316354B1C004B2306 /* tl_create.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tl_create.png; path = "../../../Desktop/设计界面材料/tl_create.png"; sourceTree = "<group>"; };
+		F0E678CE163556D2004B2306 /* bgnoise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bgnoise.png; path = "../../../Desktop/设计界面材料/bgnoise.png"; sourceTree = "<group>"; };
+		F0E678D016355830004B2306 /* ProjectDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectDetailViewController.h; sourceTree = "<group>"; };
+		F0E678D116355830004B2306 /* ProjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailViewController.m; sourceTree = "<group>"; };
+		F0E678D3163560B8004B2306 /* top_line_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_line_bg.png; path = "../../../Desktop/设计界面材料/top_line_bg.png"; sourceTree = "<group>"; };
+		F0E678D916357045004B2306 /* ProjectEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectEntryCell.h; sourceTree = "<group>"; };
+		F0E678DA16357045004B2306 /* ProjectEntryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectEntryCell.m; sourceTree = "<group>"; };
+		F0E678DD163571A7004B2306 /* UINavigationBar+CGDropShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+CGDropShadow.h"; sourceTree = "<group>"; };
+		F0E678DE163571A7004B2306 /* UINavigationBar+CGDropShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+CGDropShadow.m"; sourceTree = "<group>"; };
 		F0FDECD416259D0A00EFF6DF /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
 		F0FDECD516259D0A00EFF6DF /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
 		F0FDECE31625AA2200EFF6DF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../User.h; sourceTree = "<group>"; };
@@ -225,6 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0744EA0162FE37A0083D753 /* libIBAForms.a in Frameworks */,
 				F0D457B816244768000B6B87 /* UIKit.framework in Frameworks */,
 				F0D457BA16244768000B6B87 /* Foundation.framework in Frameworks */,
 				F0D457BC16244768000B6B87 /* CoreGraphics.framework in Frameworks */,
@@ -239,6 +282,10 @@
 		F02C2A3A162D039100D49F04 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F0E678D3163560B8004B2306 /* top_line_bg.png */,
+				F0E678CE163556D2004B2306 /* bgnoise.png */,
+				F0E678C316354B1C004B2306 /* tl_create.png */,
+				F0E678C116354891004B2306 /* banner.png */,
 				F02C2A4B162D828900D49F04 /* page.png */,
 				F02C2A3D162D067400D49F04 /* useradd.png */,
 				F02C2A3B162D03A700D49F04 /* add.png */,
@@ -253,6 +300,23 @@
 				F02C2A4F162D84E800D49F04 /* iCarousel.m */,
 			);
 			path = iCarousel;
+			sourceTree = "<group>";
+		};
+		F0744E97162FDA9F0083D753 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0744E9E162FDAA00083D753 /* libIBAForms.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0744EBB1630E8970083D753 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				F0744F101630EE210083D753 /* NewProjectDataSource.h */,
+				F0744F111630EE210083D753 /* NewProjectDataSource.m */,
+			);
+			name = DataSources;
 			sourceTree = "<group>";
 		};
 		F0BD9842162BB9C700659295 /* MagicalRecord */ = {
@@ -359,6 +423,7 @@
 		F0D457A816244768000B6B87 = {
 			isa = PBXGroup;
 			children = (
+				F0744E96162FDA9F0083D753 /* IBAForms.xcodeproj */,
 				F0D457BF16244768000B6B87 /* CigoProject */,
 				F0D457B616244768000B6B87 /* Frameworks */,
 				F0D457B416244768000B6B87 /* Products */,
@@ -388,11 +453,12 @@
 		F0D457BF16244768000B6B87 /* CigoProject */ = {
 			isa = PBXGroup;
 			children = (
+				F0744EBB1630E8970083D753 /* DataSources */,
 				F0FDECE61625AA3100EFF6DF /* Models */,
-				F0D457EB1624498F000B6B87 /* Classes */,
-				F0D457EA16244980000B6B87 /* Libraries */,
-				F0D457E516244926000B6B87 /* Resources */,
+				F0D457EB1624498F000B6B87 /* Controllers */,
 				F0D457C016244768000B6B87 /* Supporting Files */,
+				F0D457E516244926000B6B87 /* Resources */,
+				F0D457EA16244980000B6B87 /* Libraries */,
 			);
 			name = CigoProject;
 			path = CigoFirst;
@@ -409,6 +475,8 @@
 				F0D457CB16244768000B6B87 /* Default.png */,
 				F0D457CD16244768000B6B87 /* Default@2x.png */,
 				F0D457CF16244768000B6B87 /* Default-568h@2x.png */,
+				F0E678DD163571A7004B2306 /* UINavigationBar+CGDropShadow.h */,
+				F0E678DE163571A7004B2306 /* UINavigationBar+CGDropShadow.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -416,11 +484,11 @@
 		F0D457E516244926000B6B87 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F02C2A3A162D039100D49F04 /* Images */,
+				F0744F6316311F840083D753 /* Localizable.strings */,
 				F0D457D716244768000B6B87 /* CigoFirst.xcdatamodeld */,
 				F0D457D116244768000B6B87 /* MainStoryboard_iPhone.storyboard */,
-				F0D457D416244768000B6B87 /* MainStoryboard_iPad.storyboard */,
 				F082AC2616257A190031528B /* CalculatorView.xib */,
+				F02C2A3A162D039100D49F04 /* Images */,
 			);
 			name = Resources;
 			path = ..;
@@ -439,7 +507,7 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
-		F0D457EB1624498F000B6B87 /* Classes */ = {
+		F0D457EB1624498F000B6B87 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				F0D457C816244768000B6B87 /* AppDelegate.h */,
@@ -462,8 +530,14 @@
 				F02C2A40162D0E3A00D49F04 /* MainViewController.m */,
 				F00E7C87162E43950004FB9B /* ContactCell.h */,
 				F00E7C88162E43950004FB9B /* ContactCell.m */,
+				F0744EC61630EA0D0083D753 /* NewProjectViewController.h */,
+				F0744EC71630EA0D0083D753 /* NewProjectViewController.m */,
+				F0E678D016355830004B2306 /* ProjectDetailViewController.h */,
+				F0E678D116355830004B2306 /* ProjectDetailViewController.m */,
+				F0E678D916357045004B2306 /* ProjectEntryCell.h */,
+				F0E678DA16357045004B2306 /* ProjectEntryCell.m */,
 			);
-			name = Classes;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		F0D457EC162449E6000B6B87 /* HUD */ = {
@@ -669,6 +743,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F0744F5C16310E000083D753 /* PBXTargetDependency */,
 			);
 			name = CigoTour;
 			productName = CigoFirst;
@@ -690,16 +765,33 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = F0D457A816244768000B6B87;
 			productRefGroup = F0D457B416244768000B6B87 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F0744E97162FDA9F0083D753 /* Products */;
+					ProjectRef = F0744E96162FDA9F0083D753 /* IBAForms.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F0D457B216244768000B6B87 /* CigoTour */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F0744E9E162FDAA00083D753 /* libIBAForms.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libIBAForms.a;
+			remoteRef = F0744E9D162FDAA00083D753 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F0D457B116244768000B6B87 /* Resources */ = {
@@ -711,7 +803,6 @@
 				F0D457CE16244768000B6B87 /* Default@2x.png in Resources */,
 				F0D457D016244768000B6B87 /* Default-568h@2x.png in Resources */,
 				F0D457D316244768000B6B87 /* MainStoryboard_iPhone.storyboard in Resources */,
-				F0D457D616244768000B6B87 /* MainStoryboard_iPad.storyboard in Resources */,
 				F0D457FE162454D8000B6B87 /* imageviewer_return.png in Resources */,
 				F0D457FF162454D8000B6B87 /* imageviewer_save.png in Resources */,
 				F0D45800162454D8000B6B87 /* imageviewer_toolbar_background.png in Resources */,
@@ -728,6 +819,11 @@
 				F02C2A3C162D03A700D49F04 /* add.png in Resources */,
 				F02C2A3E162D067400D49F04 /* useradd.png in Resources */,
 				F02C2A4C162D828900D49F04 /* page.png in Resources */,
+				F0744F6116311F840083D753 /* Localizable.strings in Resources */,
+				F0E678C216354891004B2306 /* banner.png in Resources */,
+				F0E678C416354B1C004B2306 /* tl_create.png in Resources */,
+				F0E678CF163556D2004B2306 /* bgnoise.png in Resources */,
+				F0E678D4163560B8004B2306 /* top_line_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,12 +884,33 @@
 				F02C2A41162D0E3B00D49F04 /* MainViewController.m in Sources */,
 				F02C2A50162D84E800D49F04 /* iCarousel.m in Sources */,
 				F00E7C89162E43950004FB9B /* ContactCell.m in Sources */,
+				F0744EC81630EA0D0083D753 /* NewProjectViewController.m in Sources */,
+				F0744F121630EE210083D753 /* NewProjectDataSource.m in Sources */,
+				F0E678D216355830004B2306 /* ProjectDetailViewController.m in Sources */,
+				F0E678DB16357045004B2306 /* ProjectEntryCell.m in Sources */,
+				F0E678DF163571A7004B2306 /* UINavigationBar+CGDropShadow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F0744F5C16310E000083D753 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IBAForms;
+			targetProxy = F0744F5B16310E000083D753 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		F0744F6316311F840083D753 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0744F6216311F840083D753 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F0D457C216244768000B6B87 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -808,15 +925,6 @@
 				F0D457D216244768000B6B87 /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			path = CigoFirst;
-			sourceTree = "<group>";
-		};
-		F0D457D416244768000B6B87 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F0D457D516244768000B6B87 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			path = CigoFirst;
 			sourceTree = "<group>";
 		};
@@ -845,7 +953,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -866,7 +974,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -879,7 +987,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CigoFirst/CigoFirst-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../IBAForms/library/headers";
 				INFOPLIST_FILE = "CigoFirst/CigoFirst-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -894,7 +1004,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CigoFirst/CigoFirst-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../IBAForms/library/headers";
 				INFOPLIST_FILE = "CigoFirst/CigoFirst-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
