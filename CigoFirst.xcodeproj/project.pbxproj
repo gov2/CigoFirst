@@ -138,8 +138,8 @@
 		F0744E96162FDA9F0083D753 /* IBAForms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IBAForms.xcodeproj; path = ../IBAForms/library/IBAForms.xcodeproj; sourceTree = "<group>"; };
 		F0744EC61630EA0D0083D753 /* NewProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProjectViewController.h; sourceTree = "<group>"; };
 		F0744EC71630EA0D0083D753 /* NewProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProjectViewController.m; sourceTree = "<group>"; };
-		F0744F101630EE210083D753 /* NewProjectDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProjectDataSource.h; sourceTree = "<group>"; };
-		F0744F111630EE210083D753 /* NewProjectDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProjectDataSource.m; sourceTree = "<group>"; };
+		F0744F101630EE210083D753 /* NewProjectDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewProjectDataSource.h; path = ../Classes/NewProjectDataSource.h; sourceTree = "<group>"; };
+		F0744F111630EE210083D753 /* NewProjectDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewProjectDataSource.m; path = ../Classes/NewProjectDataSource.m; sourceTree = "<group>"; };
 		F0744F6216311F840083D753 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F082AC2616257A190031528B /* CalculatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalculatorView.xib; path = Resources/CalculatorView.xib; sourceTree = "<group>"; };
 		F08A088C16258217009BB29D /* CalculatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorView.h; sourceTree = "<group>"; };
@@ -479,7 +479,7 @@
 				F0D457EA16244980000B6B87 /* Libraries */,
 			);
 			name = CigoProject;
-			path = CigoFirst;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		F0D457C016244768000B6B87 /* Supporting Files */ = {
@@ -1015,7 +1015,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CigoFirst/CigoFirst-Prefix.pch";
+				GCC_PREFIX_HEADER = "Classes/CigoFirst-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../IBAForms/library/headers";
 				INFOPLIST_FILE = "Resources/CigoFirst-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -1032,7 +1032,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CigoFirst/CigoFirst-Prefix.pch";
+				GCC_PREFIX_HEADER = "Classes/CigoFirst-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../IBAForms/library/headers";
 				INFOPLIST_FILE = "Resources/CigoFirst-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
