@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F00E7C89162E43950004FB9B /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F00E7C88162E43950004FB9B /* ContactCell.m */; };
+		F01475F01636B53F006B97D9 /* TimeScroller.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F01475ED1636B53F006B97D9 /* TimeScroller.bundle */; };
+		F01475F11636B53F006B97D9 /* TimeScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = F01475EF1636B53F006B97D9 /* TimeScroller.m */; };
 		F02C2A07162C3C1C00D49F04 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C2A06162C3C1C00D49F04 /* Entry.m */; };
 		F02C2A0A162C3C1D00D49F04 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C2A09162C3C1D00D49F04 /* Project.m */; };
 		F02C2A39162CF4D300D49F04 /* AddProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C2A38162CF4D300D49F04 /* AddProjectViewController.m */; };
@@ -117,10 +119,13 @@
 		F00E7C85162E432B0004FB9B /* NSObject+Subscripts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Subscripts.h"; sourceTree = "<group>"; };
 		F00E7C87162E43950004FB9B /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCell.h; sourceTree = "<group>"; };
 		F00E7C88162E43950004FB9B /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactCell.m; sourceTree = "<group>"; };
-		F02C2A05162C3C1C00D49F04 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entry.h; path = ../Models/Entry.h; sourceTree = "<group>"; };
-		F02C2A06162C3C1C00D49F04 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Entry.m; path = ../Models/Entry.m; sourceTree = "<group>"; };
-		F02C2A08162C3C1D00D49F04 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Project.h; path = ../Models/Project.h; sourceTree = "<group>"; };
-		F02C2A09162C3C1D00D49F04 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Project.m; path = ../Models/Project.m; sourceTree = "<group>"; };
+		F01475ED1636B53F006B97D9 /* TimeScroller.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TimeScroller.bundle; sourceTree = "<group>"; };
+		F01475EE1636B53F006B97D9 /* TimeScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeScroller.h; sourceTree = "<group>"; };
+		F01475EF1636B53F006B97D9 /* TimeScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeScroller.m; sourceTree = "<group>"; };
+		F02C2A05162C3C1C00D49F04 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		F02C2A06162C3C1C00D49F04 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		F02C2A08162C3C1D00D49F04 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
+		F02C2A09162C3C1D00D49F04 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		F02C2A37162CF4D300D49F04 /* AddProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddProjectViewController.h; sourceTree = "<group>"; };
 		F02C2A38162CF4D300D49F04 /* AddProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddProjectViewController.m; sourceTree = "<group>"; };
 		F02C2A3B162D03A700D49F04 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Resources/add.png; sourceTree = "<group>"; };
@@ -258,8 +263,8 @@
 		F0E678DE163571A7004B2306 /* UINavigationBar+CGDropShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+CGDropShadow.m"; sourceTree = "<group>"; };
 		F0FDECD416259D0A00EFF6DF /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
 		F0FDECD516259D0A00EFF6DF /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
-		F0FDECE31625AA2200EFF6DF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../Models/User.h; sourceTree = "<group>"; };
-		F0FDECE41625AA2200EFF6DF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ../Models/User.m; sourceTree = "<group>"; };
+		F0FDECE31625AA2200EFF6DF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		F0FDECE41625AA2200EFF6DF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +284,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F01475EC1636B53F006B97D9 /* TimeScroller */ = {
+			isa = PBXGroup;
+			children = (
+				F01475ED1636B53F006B97D9 /* TimeScroller.bundle */,
+				F01475EE1636B53F006B97D9 /* TimeScroller.h */,
+				F01475EF1636B53F006B97D9 /* TimeScroller.m */,
+			);
+			name = TimeScroller;
+			path = Libraries/TimeScroller;
+			sourceTree = SOURCE_ROOT;
+		};
 		F02C2A3A162D039100D49F04 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +515,7 @@
 		F0D457EA16244980000B6B87 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F01475EC1636B53F006B97D9 /* TimeScroller */,
 				F02C2A4D162D84E800D49F04 /* iCarousel */,
 				F0BD9842162BB9C700659295 /* MagicalRecord */,
 				F0D458131624554E000B6B87 /* EGO */,
@@ -830,6 +847,7 @@
 				F0E678C416354B1C004B2306 /* tl_create.png in Resources */,
 				F0E678CF163556D2004B2306 /* bgnoise.png in Resources */,
 				F0E678D4163560B8004B2306 /* top_line_bg.png in Resources */,
+				F01475F01636B53F006B97D9 /* TimeScroller.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -895,6 +913,7 @@
 				F0E678D216355830004B2306 /* ProjectDetailViewController.m in Sources */,
 				F0E678DB16357045004B2306 /* ProjectEntryCell.m in Sources */,
 				F0E678DF163571A7004B2306 /* UINavigationBar+CGDropShadow.m in Sources */,
+				F01475F11636B53F006B97D9 /* TimeScroller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -961,6 +980,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SOURCE-ROOT)/../Resources/CigoFirst-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -982,6 +1002,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SOURCE-ROOT)/../Resources/CigoFirst-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -996,7 +1017,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CigoFirst/CigoFirst-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../IBAForms/library/headers";
-				INFOPLIST_FILE = "CigoFirst/CigoFirst-Info.plist";
+				INFOPLIST_FILE = "Resources/CigoFirst-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1013,7 +1034,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CigoFirst/CigoFirst-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../IBAForms/library/headers";
-				INFOPLIST_FILE = "CigoFirst/CigoFirst-Info.plist";
+				INFOPLIST_FILE = "Resources/CigoFirst-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
