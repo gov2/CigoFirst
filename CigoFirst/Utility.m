@@ -13,7 +13,6 @@ static MBProgressHUD *HUD;
 static NSTimer *timer;
 
 @interface Utility()
-+ (void)removeHUDOnTimeOut;
 @end
 
 @implementation Utility
@@ -31,7 +30,7 @@ static NSTimer *timer;
 	[HUD release];
 }
 
-+ (void)removeHUDOnTimeOut{
++ (void)removeHUDOnTimeOut:(NSTimer *) theTimer{
 	[HUD hide:YES];
 	[HUD removeFromSuperViewOnHide];
 	[HUD release];
@@ -42,11 +41,11 @@ static NSTimer *timer;
 
 + (void) showHUD:(NSString *)msg withTime:(NSUInteger)duration {
     if (timer.isValid) {
-        [Utility removeHUDOnTimeOut];
+        [Utility removeHUDOnTimeOut:timer];
     }
     [Utility showHUD: msg];
     timer = [NSTimer scheduledTimerWithTimeInterval: duration
-                                             target: [Utility class]
+                                             target: [self class]
                                            selector: @selector(removeHUDOnTimeOut)
                                            userInfo: nil
                                             repeats: NO] ;

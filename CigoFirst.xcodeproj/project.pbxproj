@@ -117,17 +117,17 @@
 		F00E7C85162E432B0004FB9B /* NSObject+Subscripts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Subscripts.h"; sourceTree = "<group>"; };
 		F00E7C87162E43950004FB9B /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCell.h; sourceTree = "<group>"; };
 		F00E7C88162E43950004FB9B /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactCell.m; sourceTree = "<group>"; };
-		F02C2A05162C3C1C00D49F04 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entry.h; path = ../Entry.h; sourceTree = "<group>"; };
-		F02C2A06162C3C1C00D49F04 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Entry.m; path = ../Entry.m; sourceTree = "<group>"; };
-		F02C2A08162C3C1D00D49F04 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Project.h; path = ../Project.h; sourceTree = "<group>"; };
-		F02C2A09162C3C1D00D49F04 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Project.m; path = ../Project.m; sourceTree = "<group>"; };
+		F02C2A05162C3C1C00D49F04 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entry.h; path = ../Models/Entry.h; sourceTree = "<group>"; };
+		F02C2A06162C3C1C00D49F04 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Entry.m; path = ../Models/Entry.m; sourceTree = "<group>"; };
+		F02C2A08162C3C1D00D49F04 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Project.h; path = ../Models/Project.h; sourceTree = "<group>"; };
+		F02C2A09162C3C1D00D49F04 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Project.m; path = ../Models/Project.m; sourceTree = "<group>"; };
 		F02C2A37162CF4D300D49F04 /* AddProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddProjectViewController.h; sourceTree = "<group>"; };
 		F02C2A38162CF4D300D49F04 /* AddProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddProjectViewController.m; sourceTree = "<group>"; };
-		F02C2A3B162D03A700D49F04 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
-		F02C2A3D162D067400D49F04 /* useradd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = useradd.png; sourceTree = "<group>"; };
+		F02C2A3B162D03A700D49F04 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Resources/add.png; sourceTree = "<group>"; };
+		F02C2A3D162D067400D49F04 /* useradd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = useradd.png; path = Resources/useradd.png; sourceTree = "<group>"; };
 		F02C2A3F162D0E3A00D49F04 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		F02C2A40162D0E3A00D49F04 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		F02C2A4B162D828900D49F04 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page.png; sourceTree = "<group>"; };
+		F02C2A4B162D828900D49F04 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = page.png; path = Resources/page.png; sourceTree = "<group>"; };
 		F02C2A4E162D84E800D49F04 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		F02C2A4F162D84E800D49F04 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		F0744E96162FDA9F0083D753 /* IBAForms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IBAForms.xcodeproj; path = ../IBAForms/library/IBAForms.xcodeproj; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		F0744F101630EE210083D753 /* NewProjectDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProjectDataSource.h; sourceTree = "<group>"; };
 		F0744F111630EE210083D753 /* NewProjectDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProjectDataSource.m; sourceTree = "<group>"; };
 		F0744F6216311F840083D753 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F082AC2616257A190031528B /* CalculatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculatorView.xib; sourceTree = "<group>"; };
+		F082AC2616257A190031528B /* CalculatorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalculatorView.xib; path = Resources/CalculatorView.xib; sourceTree = "<group>"; };
 		F08A088C16258217009BB29D /* CalculatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorView.h; sourceTree = "<group>"; };
 		F08A088D16258217009BB29D /* CalculatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorView.m; sourceTree = "<group>"; };
 		F0BD983B162AA9C400659295 /* AddEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEntryViewController.h; sourceTree = "<group>"; };
@@ -200,15 +200,15 @@
 		F0D457B916244768000B6B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F0D457BB16244768000B6B87 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F0D457BD16244768000B6B87 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		F0D457C116244768000B6B87 /* CigoFirst-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CigoFirst-Info.plist"; sourceTree = "<group>"; };
+		F0D457C116244768000B6B87 /* CigoFirst-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CigoFirst-Info.plist"; path = "../Resources/CigoFirst-Info.plist"; sourceTree = "<group>"; };
 		F0D457C316244768000B6B87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F0D457C516244768000B6B87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0D457C716244768000B6B87 /* CigoFirst-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CigoFirst-Prefix.pch"; sourceTree = "<group>"; };
 		F0D457C816244768000B6B87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F0D457C916244768000B6B87 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F0D457CB16244768000B6B87 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		F0D457CD16244768000B6B87 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		F0D457CF16244768000B6B87 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F0D457CB16244768000B6B87 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Resources/Default.png; sourceTree = "<group>"; };
+		F0D457CD16244768000B6B87 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Resources/Default@2x.png"; sourceTree = "<group>"; };
+		F0D457CF16244768000B6B87 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		F0D457D216244768000B6B87 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		F0D457D816244768000B6B87 /* CigoFirst.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CigoFirst.xcdatamodel; sourceTree = "<group>"; };
 		F0D457DA16244768000B6B87 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
@@ -258,8 +258,8 @@
 		F0E678DE163571A7004B2306 /* UINavigationBar+CGDropShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+CGDropShadow.m"; sourceTree = "<group>"; };
 		F0FDECD416259D0A00EFF6DF /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddContactViewController.h; sourceTree = "<group>"; };
 		F0FDECD516259D0A00EFF6DF /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
-		F0FDECE31625AA2200EFF6DF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../User.h; sourceTree = "<group>"; };
-		F0FDECE41625AA2200EFF6DF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ../User.m; sourceTree = "<group>"; };
+		F0FDECE31625AA2200EFF6DF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../Models/User.h; sourceTree = "<group>"; };
+		F0FDECE41625AA2200EFF6DF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ../Models/User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,7 +299,8 @@
 				F02C2A4E162D84E800D49F04 /* iCarousel.h */,
 				F02C2A4F162D84E800D49F04 /* iCarousel.m */,
 			);
-			path = iCarousel;
+			name = iCarousel;
+			path = ../Libraries/iCarousel;
 			sourceTree = "<group>";
 		};
 		F0744E97162FDA9F0083D753 /* Products */ = {
@@ -326,7 +327,8 @@
 				F0BD986D162BB9C700659295 /* Core */,
 				F0BD987D162BB9C700659295 /* CoreData+MagicalRecord.h */,
 			);
-			path = MagicalRecord;
+			name = MagicalRecord;
+			path = ../Libraries/MagicalRecord;
 			sourceTree = "<group>";
 		};
 		F0BD9843162BB9C700659295 /* Categories */ = {
@@ -546,7 +548,8 @@
 				F0D457ED162449E6000B6B87 /* MBProgressHUD.h */,
 				F0D457EE162449E6000B6B87 /* MBProgressHUD.m */,
 			);
-			path = HUD;
+			name = HUD;
+			path = ../Libraries/HUD;
 			sourceTree = "<group>";
 		};
 		F0D457F3162454D7000B6B87 /* PhotoViewer */ = {
@@ -563,7 +566,8 @@
 				F0D457FC162454D7000B6B87 /* zoom_in.png */,
 				F0D457FD162454D7000B6B87 /* zoom_out.png */,
 			);
-			path = PhotoViewer;
+			name = PhotoViewer;
+			path = ../Libraries/PhotoViewer;
 			sourceTree = "<group>";
 		};
 		F0D45807162454E9000B6B87 /* PullingRefresh */ = {
@@ -576,7 +580,8 @@
 				F0D4580C162454E9000B6B87 /* PullingRefreshTableView.h */,
 				F0D4580D162454E9000B6B87 /* PullingRefreshTableView.m */,
 			);
-			path = PullingRefresh;
+			name = PullingRefresh;
+			path = ../Libraries/PullingRefresh;
 			sourceTree = "<group>";
 		};
 		F0D458131624554E000B6B87 /* EGO */ = {
@@ -588,7 +593,8 @@
 				F0D4581F1624554E000B6B87 /* EGOImageView */,
 				F0D458221624554E000B6B87 /* EGOPhotoViewer */,
 			);
-			path = EGO;
+			name = EGO;
+			path = ../Libraries/EGO;
 			sourceTree = "<group>";
 		};
 		F0D458141624554E000B6B87 /* EGOCache */ = {
@@ -909,6 +915,7 @@
 				F0744F6216311F840083D753 /* en */,
 			);
 			name = Localizable.strings;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		F0D457C216244768000B6B87 /* InfoPlist.strings */ = {
@@ -917,6 +924,7 @@
 				F0D457C316244768000B6B87 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = ../Resources;
 			sourceTree = "<group>";
 		};
 		F0D457D116244768000B6B87 /* MainStoryboard_iPhone.storyboard */ = {
@@ -925,7 +933,7 @@
 				F0D457D216244768000B6B87 /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			path = CigoFirst;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

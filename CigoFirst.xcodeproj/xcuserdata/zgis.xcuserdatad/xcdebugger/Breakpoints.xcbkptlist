@@ -86,12 +86,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CigoFirst/Utility.m"
-         timestampString = "371639849.87781"
+         timestampString = "372650077.862727"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
-         landmarkName = "+removeHUDOnTimeOut"
+         startingLineNumber = "34"
+         endingLineNumber = "34"
+         landmarkName = "+removeHUDOnTimeOut:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -262,6 +262,17 @@
          endingLineNumber = "55"
          landmarkName = "-setInputRequestor:"
          landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CigoFirst/CigoFirst-Prefix.pch"
+         timestampString = "372649712.235135"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "13"
+         endingLineNumber = "13">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

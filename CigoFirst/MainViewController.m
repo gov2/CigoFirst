@@ -10,6 +10,7 @@
 #import "MainViewController.h"
 #import "NewProjectViewController.h"
 #import "NewProjectDataSource.h"
+#import "Utility.h"
 
 #define ITEM_SPACING 210.0f
 #define INCLUDE_PLACEHOLDERS YES
@@ -37,6 +38,12 @@
 	// Do any additional setup after loading the view.
     _coverflowControl.decelerationRate = 0.5;
     _coverflowControl.type = iCarouselTypeCoverFlow2;
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    //[Utility showHUD:@"Welcome" withTime: 1.5];
 }
 
 - (void)didReceiveMemoryWarning
