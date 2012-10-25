@@ -14,8 +14,10 @@
 #define kDynamicSection 1
 
 @interface ProjectDetailViewController (){
-    NSDictionary *dateEntryDictionary;
+    NSDictionary *_dateEntryDictionary;
     TimeScroller *_timeScroller;
+    NSArray *_dateArray;
+    UIImageView *_topView;
 }
 
 @end
@@ -34,23 +36,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bgnoise.png"]];
-    //    NSString *backgroudpath = [[NSBundle mainBundle] pathForResource:@"bgnoise" ofType:@"png"];
-    //    UIImage  *backgroudImage = [UIImage imageWithContentsOfFile:backgroudpath];
-    //    [self.view setBackgroundColor: [UIColor colorWithPatternImage:backgroudImage]];
+    _timeScroller = [[TimeScroller alloc] initWithDelegate:self];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bgnoise.png"]];
-    UIImageView *view = [[UIImageView alloc]initWithFrame: CGRectMake(0, 0, 320, 160)];
-    [view setImage: [UIImage imageNamed: @"banner.png"]];
-    [self.view addSubview: view];
-    [self.view bringSubviewToFront:view];
-    //[self.tableView setBackgroundView:background];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    _topView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
+    [_topView setImage: [UIImage imageNamed: @"banner.png"]];
+    UIImageView *startView = [[UIImageView alloc] initWithFrame:CGRectMake(1, 116, 320, 44)];
+    [startView setImage: [UIImage imageNamed: @"prj_entry_start.png"]];
+    [_topView addSubview:startView];
+    [self.view addSubview:_topView];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -76,16 +70,6 @@
     }
 }
 
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    if (section == 0) {
-        UIImageView *view = [[UIImageView alloc]initWithFrame: CGRectMake(0, 0, 320, 160)];
-        
-        [view setImage: [UIImage imageNamed: @"banner.png"]];
-        return view;
-    }
-    return nil;
-}
 
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
@@ -98,12 +82,13 @@
     NSDate *currentDate;
     NSSet *entrySet = project.entries;
     NSSortDescriptor *createDateDescriptor = [[NSSortDescriptor alloc]initWithKey:@"createTime" ascending:YES];
-    NSArray *descriptor = @[createDateDescriptor];
-    NSArray *sortedArray = [entrySet sortedArrayUsingDescriptors:descriptor];
+    NSArray *sortedArray = [entrySet sortedArrayUsingDescriptors:@[createDateDescriptor]];
     NSMutableArray *dateEntry = [[NSMutableArray alloc]init];
+    NSMutableArray *dateArray = [[NSMutableArray alloc]init];
     for (Entry *entry in sortedArray) {
         if (currentDate == nil) {
             currentDate = entry.createTime;
+            [dateArray addObject:currentDate];
         }
         if ([entry.createTime isEqualToDate: currentDate]) {
             [dateEntry addObject: entry];
@@ -114,7 +99,9 @@
             currentDate = nil;
         }
     }
-    dateEntryDictionary = entryDict;
+    [entryDict setObject:dateEntry forKey:currentDate.copy];
+    _dateArray = dateArray;
+    _dateEntryDictionary = entryDict;
     _project = project;
 }
 
@@ -136,7 +123,13 @@
     else if (indexPath.row == 0) {
         return [super tableView:tableView heightForRowAtIndexPath:indexPath];
     }
-    return 88;
+    return [self calculateCellHeight:indexPath.row - 1];
+}
+
+- (CGFloat)calculateCellHeight:(NSInteger)index
+{
+    NSArray *entries = [_dateEntryDictionary objectForKey: [_dateArray objectAtIndex:index]];
+    return (entries.count + 1) * 44;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -151,16 +144,32 @@
     {
         cell = [[ProjectEntryCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"ProjectEntryCell"];
     }
+    NSArray *entries = [_dateEntryDictionary objectForKey: [_dateArray objectAtIndex:indexPath.row - 1]];
+    cell.entries = entries;
+    [cell resizeHeight];
+    
     return cell;
 }
 
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [super tableView:tableView viewForHeaderInSection:section];
+    //    if (section == 0) {
+    //        UIImageView *view = [[UIImageView alloc]initWithFrame: CGRectMake(0, 0, 320, 160)];
+    //
+    //        [view setImage: [UIImage imageNamed: @"banner.png"]];
+    //        return view;
+    //    }
+    //    return nil;
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section != kDynamicSection) {
         return [super tableView:tableView numberOfRowsInSection:section];
     }
-    return dateEntryDictionary.count + 15;
+    return _dateArray.count + 1;
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -219,6 +228,26 @@
 {
     [self.tableView reloadData];
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - Timer Scroll delegate
+
+- (UITableView *)tableViewForTimeScroller:(TimeScroller *)timeScroller
+{
+    return self.tableView;
+}
+
+- (NSDate *)dateForCell:(UITableViewCell *)cell
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    if (indexPath.section == 0) {
+        return _project.createTime;
+    }
+    if (indexPath.row == 0) {
+        return [NSDate date];
+    }
+    
+    return [_dateArray objectAtIndex: indexPath.row -1];
 }
 
 @end

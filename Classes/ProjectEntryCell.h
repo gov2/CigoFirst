@@ -15,5 +15,5 @@
     UIImageView *middle_;
 }
 @property (nonatomic, assign) NSArray *entries;
-
+- (void)resizeHeight;
 @end

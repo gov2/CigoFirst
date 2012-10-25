@@ -2,7 +2,7 @@
 //  Project.h
 //  CigoFirst
 //
-//  Created by zjugis on 12-10-15.
+//  Created by zjugis on 12-10-25.
 //  Copyright (c) 2012年 cigo. All rights reserved.
 //
 
@@ -13,12 +13,14 @@
 
 @interface Project : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * isFinished;
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * pid;
 @property (nonatomic, retain) NSDate * createTime;
-@property (nonatomic, retain) NSDate * limitTime;
 @property (nonatomic, retain) NSDate * finishTime;
+@property (nonatomic, retain) NSNumber * inNotification;
+@property (nonatomic, retain) NSNumber * isFinished;
+@property (nonatomic, retain) NSDate * limitTime;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSData * photo;
+@property (nonatomic, retain) NSNumber * pid;
 @property (nonatomic, retain) NSSet *entries;
 @property (nonatomic, retain) NSSet *users;
 @end

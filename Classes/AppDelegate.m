@@ -33,15 +33,15 @@
         //controller.managedObjectContext = self.managedObjectContext;
         UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
         navigationController.title = NSLocalizedString(@"main_view_title", nil);
-        navigationController.navigationBar.tintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"top_line_bg.png"]];
-        //navigationController.navigationBar.alpha = 1.0f;
-        navigationController.navigationBar.translucent = YES;
-        NSDictionary *titleTextDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                                       [UIColor blackColor], UITextAttributeTextColor,
-                                       [UIColor clearColor], UITextAttributeTextShadowColor,
-                                       nil];
-        navigationController.navigationBar.titleTextAttributes = titleTextDict;
-    }
+//        navigationController.navigationBar.tintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"top_line_bg.png"]];
+//        //navigationController.navigationBar.alpha = 1.0f;
+//        navigationController.navigationBar.translucent = YES;
+//        NSDictionary *titleTextDict = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                       [UIColor blackColor], UITextAttributeTextColor,
+//                                       [UIColor clearColor], UITextAttributeTextShadowColor,
+//                                       nil];
+//        navigationController.navigationBar.titleTextAttributes = titleTextDict;
+        }
     return YES;
 }
 							

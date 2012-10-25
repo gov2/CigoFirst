@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Project.h"
 #import "AddEntryViewController.h"
+#import "TimeScroller.h"   
 
-@interface ProjectDetailViewController : UITableViewController <UITableViewDelegate, UIScrollViewDelegate, AddEntryDelegate>
+@interface ProjectDetailViewController : UITableViewController <UITableViewDelegate, UIScrollViewDelegate, AddEntryDelegate, TimeScrollerDelegate>
 
 @property (nonatomic, assign) Project *project;
 

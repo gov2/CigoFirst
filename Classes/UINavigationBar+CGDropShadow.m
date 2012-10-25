@@ -29,6 +29,14 @@
     self.layer.shadowPath = [UIBezierPath bezierPathWithRect:shadowPath].CGPath;
     self.layer.masksToBounds = NO;
     self.layer.shouldRasterize = YES;
+    
+    self.tintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"top_line_bg.png"]];
+    self.translucent = YES;
+    NSDictionary *titleTextDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   [UIColor blackColor], UITextAttributeTextColor,
+                                   [UIColor clearColor], UITextAttributeTextShadowColor,
+                                   nil];
+    self.titleTextAttributes = titleTextDict;
 }
 
 @end

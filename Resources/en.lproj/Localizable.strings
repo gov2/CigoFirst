@@ -7,4 +7,10 @@
 	"project_new_users" = "\U597d\U53cb";
 	"main_view_title" = "\U5386\U7a0b";
 	"user_view_title" = "\U597d\U53cb\U5217\U8868";
+	"alert_empty_user_title" = "\U6ca1\U6709\U597d\U53cb";
+	"alert_empty_user_message" = "\U597d\U50cf\U7b2c\U4e00\U6b21\U8fd0\U884c\U7a0b\U5e8f\Uff0c \U8981\U4e0d\U8981\U5bfc\U5165\U901a\U4fe1\U5f55\U5462\Uff1f";
+	"alert_empty_user_cancel" = "\U4e0d\U4e86";
+	"alert_empty_user_ok" = "\U597d\U7684\Uff0c\U65b9\U4fbf\U591a\U4e86";
+	"import_addbook_mssage" = "\U5bfc\U5165\U4e2d\Uff0c\U8bf7\U7a0d\U540e...";
+	"import_addbook_finished" = "\U5bfc\U5165\U5b8c\U6210\Uff0c\U5171\U5bfc\U5165%d\U4e2a\U8054\U7cfb\U4eba";
 }

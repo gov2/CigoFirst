@@ -344,7 +344,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLb-TK-hMS">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLb-TK-hMS">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="65" id="7RE-vz-BdY"/>
                                                         <constraint firstAttribute="height" constant="37" id="uKO-uw-rZg"/>
@@ -361,17 +361,16 @@
                                                         <segue destination="V8R-6q-iCq" kind="modal" identifier="ShowEntryAddView" modalTransitionStyle="coverVertical" id="8BC-fa-RfH"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="8J3-qG-1sy">
-                                                    <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="prj_entry_new.png" translatesAutoresizingMaskIntoConstraints="NO" id="rbZ-hB-sJL"/>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="VLb-TK-hMS" firstAttribute="leading" secondItem="ks5-Gf-Llr" secondAttribute="leading" constant="147" id="6kM-6X-XX6"/>
                                             <constraint firstItem="VLb-TK-hMS" firstAttribute="top" secondItem="ks5-Gf-Llr" secondAttribute="top" constant="61" id="7Fr-gX-rTK"/>
-                                            <constraint firstItem="8J3-qG-1sy" firstAttribute="leading" secondItem="ks5-Gf-Llr" secondAttribute="leading" type="default" id="hH8-AW-BXn"/>
-                                            <constraint firstItem="8J3-qG-1sy" firstAttribute="top" secondItem="ks5-Gf-Llr" secondAttribute="top" type="default" id="vDL-Oh-pbd"/>
+                                            <constraint firstItem="rbZ-hB-sJL" firstAttribute="top" secondItem="ks5-Gf-Llr" secondAttribute="top" type="default" id="Pe2-Vp-JOw"/>
+                                            <constraint firstItem="rbZ-hB-sJL" firstAttribute="leading" secondItem="ks5-Gf-Llr" secondAttribute="leading" type="default" id="RXQ-9k-ceP"/>
+                                            <constraint firstItem="rbZ-hB-sJL" firstAttribute="bottom" secondItem="ks5-Gf-Llr" secondAttribute="bottom" type="default" id="eWI-8j-OUt"/>
+                                            <constraint firstItem="VLb-TK-hMS" firstAttribute="leading" secondItem="ks5-Gf-Llr" secondAttribute="leading" constant="147" id="fvA-dD-VWx"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -384,8 +383,15 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="prj_entry_new.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tbl-yG-6Y8"/>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="Tbl-yG-6Y8" firstAttribute="top" secondItem="hAp-LJ-hDr" secondAttribute="top" type="default" id="aGw-AE-URz"/>
+                                            <constraint firstItem="Tbl-yG-6Y8" firstAttribute="leading" secondItem="hAp-LJ-hDr" secondAttribute="leading" type="default" id="qfd-s7-ity"/>
+                                        </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProjectEntryCell" id="vOb-MJ-Nve">
                                         <rect key="frame" x="0.0" y="204" width="320" height="44"/>
@@ -868,7 +874,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="banner.png" width="320" height="160"/>
+        <image name="prj_entry_new.png" width="320" height="44"/>
         <image name="useradd.png" width="30" height="30"/>
     </resources>
     <classes>
@@ -888,6 +894,7 @@
             <relationships>
                 <relationship kind="action" name="cancelPressed:"/>
                 <relationship kind="action" name="donePressed:"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
             </relationships>
         </class>
         <class className="AddProjectViewController" superclassName="UITableViewController">

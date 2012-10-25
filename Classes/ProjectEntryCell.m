@@ -14,12 +14,13 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         top_ = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"prj_entry_top.png"]];
         [top_ setFrame: CGRectMake(0, 0, 320, 44)];
         [self addSubview:top_];
         middle_ = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"prj_entry_middle.png"]];
-        [middle_ setFrame:CGRectMake(0, 44, 320, self.frame.size.height - 88)];
-        // [self addSubview:middle_];
+        [middle_ setFrame:CGRectMake(0, 44, 320, 0)];
+        [self addSubview:middle_];
         bottom_ = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"prj_entry_bottom.png"]];
         [bottom_ setFrame: CGRectMake(0, 44, 320, 44)];
         [self addSubview:bottom_];
@@ -40,6 +41,15 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)resizeHeight
+{
+    NSInteger count = self.entries.count;
+    if (count > 0) {
+        [middle_ setFrame: CGRectMake(0, 44, 320, (count - 1) * 44)];
+        [bottom_ setFrame: CGRectMake(0, 44 + (count - 1) * 44, 320, 44)];
+    }
 }
 
 @end

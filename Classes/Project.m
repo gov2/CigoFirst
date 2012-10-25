@@ -2,7 +2,7 @@
 //  Project.m
 //  CigoFirst
 //
-//  Created by zjugis on 12-10-15.
+//  Created by zjugis on 12-10-25.
 //  Copyright (c) 2012年 cigo. All rights reserved.
 //
 
@@ -13,19 +13,15 @@
 
 @implementation Project
 
-@dynamic isFinished;
-@dynamic name;
-@dynamic pid;
 @dynamic createTime;
-@dynamic limitTime;
 @dynamic finishTime;
+@dynamic inNotification;
+@dynamic isFinished;
+@dynamic limitTime;
+@dynamic name;
+@dynamic photo;
+@dynamic pid;
 @dynamic entries;
 @dynamic users;
-
-- (void)addEntriesObject:(Entry *)value
-{
-    //NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
-    //[[self entries] addObject:value];
-}
 
 @end

@@ -44,7 +44,13 @@
     [calView setBackgroundColor:[ UIColor colorWithRed:36 green:37 blue:51 alpha:1]];
     calView.delegate = self;
     [self.view addSubview: calView];
-    //_usersEntry = [self initializeDataSource];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    User* user = [_users objectAtIndex:0];
+    NSArray *entries = [_usersEntry objectForKey: user.objectID];
+    [_pickerView selectRow: entries.count inComponent:1 animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -197,19 +203,19 @@
 - (IBAction)cancelPressed:(id)sender {
     
     NSMutableArray *willClearEntries = [[NSMutableArray alloc] init];
-    
+    // clear entries new added
     for (Entry* entry in _project.entries) {
         if (!entry.createTime) {
             [willClearEntries addObject:entry];
         }
     }
-    
     [_project removeEntries:[NSSet setWithArray:willClearEntries]];
     
     if([self.delegate respondsToSelector:@selector(entryAddCanceled:)]) {
 		[self.delegate entryAddCanceled:self];
 	}
 }
+
 - (void)viewDidUnload {
     [self setPickerView:nil];
     [super viewDidUnload];

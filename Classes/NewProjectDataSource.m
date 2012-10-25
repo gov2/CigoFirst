@@ -49,7 +49,7 @@
                                                        type:IBADateFormFieldTypeDateTime
                                               dateFormatter:dateTimeFormatter]];
         
-        [baseSection addFormField:[[IBABooleanFormField alloc] initWithKeyPath:@"isFinished" title:NSLocalizedString(@"project_notice", nil) type:IBABooleanFormFieldTypeSwitch]];
+        [baseSection addFormField:[[IBABooleanFormField alloc] initWithKeyPath:@"inNotification" title:NSLocalizedString(@"project_notice", nil) type:IBABooleanFormFieldTypeSwitch]];
         
         IBAFormSection *usersSection = [self addSectionWithHeaderTitle:NSLocalizedString(@"project_new_users_header", nil) footerTitle:nil];
         
