@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol  CalculatorDelegate;
-@interface AddEntryViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, CalculatorDelegate>
+@protocol  CalculatorDelegate, AddEntryDelegate;
 
+@interface AddEntryViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, CalculatorDelegate>
+@property (nonatomic, weak) id<AddEntryDelegate> delegate;
+@end
+
+@protocol AddEntryDelegate <NSObject>
+@optional
+- (void) entryAddFinished:(AddEntryViewController *)addEntryViewController;
+- (void) entryAddCanceled:(AddEntryViewController *)addEntryViewController;
 @end

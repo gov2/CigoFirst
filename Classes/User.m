@@ -17,4 +17,14 @@
 @dynamic uid;
 @dynamic phone;
 
+-(UIImage *)iconImage
+{
+    return [UIImage imageWithData: self.photo];
+}
+
+- (UIFont *)font
+{
+    return nil;
+}
+
 @end

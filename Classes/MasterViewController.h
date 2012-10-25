@@ -12,12 +12,11 @@
 
 #import <CoreData/CoreData.h>
 #import "AddContactViewController.h"
+#import "TimeScroller.h"
 
-
-@interface MasterViewController : UITableViewController <NSFetchedResultsControllerDelegate, AddContactDelegate>
+@interface MasterViewController : UITableViewController
+                                 <UIScrollViewDelegate, AddContactDelegate, TimeScrollerDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @end

@@ -25,12 +25,11 @@
 
 @end
 
-
 @implementation TimeScroller
 
 - (id)initWithDelegate:(id<TimeScrollerDelegate>)delegate
 {
-    UIImage *background = [[UIImage imageNamed:@"timescroll_pointer"] resizableImageWithCapInsets:UIEdgeInsetsMake(0.0f, 35.0f, 0.0f, 10.0f)];
+    UIImage *background = [[UIImage imageNamed:@"TimeScroller.bundle/timescroll_pointer"] resizableImageWithCapInsets:UIEdgeInsetsMake(0.0f, 35.0f, 0.0f, 10.0f)];
     
     self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, background.size.height)];
     if (self)
@@ -49,12 +48,12 @@
         [_backgroundView addSubview:_handContainer];
         
         _hourHand = [[UIView alloc] initWithFrame:CGRectMake(8.0f, 0.0f, 4.0f, 20.0f)];
-        UIImageView *hourImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"timescroll_hourhand"]];
+        UIImageView *hourImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TimeScroller.bundle/timescroll_hourhand"]];
         [_hourHand addSubview:hourImageView];
         [_handContainer addSubview:_hourHand];
         
         _minuteHand = [[UIView alloc] initWithFrame:CGRectMake(8.0f, 0.0f, 4.0f, 20.0f)];
-        UIImageView *minuteImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"timescroll_minutehand"]];
+        UIImageView *minuteImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TimeScroller.bundle/timescroll_minutehand"]];
         [_minuteHand addSubview:minuteImageView];
         [_handContainer addSubview:_minuteHand];
         
@@ -85,28 +84,34 @@
 
 - (void)createFormatters
 {
+    NSLocale *zh_Locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh-Hans"];
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setCalendar:self.calendar];
     [dateFormatter setTimeZone:self.calendar.timeZone];
     [dateFormatter setDateFormat:@"h:mm a"];
+    [dateFormatter setLocale:zh_Locale];
     self.timeDateFormatter = dateFormatter;
     
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setCalendar:self.calendar];
     [dateFormatter setTimeZone:self.calendar.timeZone];
     dateFormatter.dateFormat = @"cccc";
+    [dateFormatter setLocale:zh_Locale];
     self.dayOfWeekDateFormatter = dateFormatter;
     
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setCalendar:self.calendar];
     [dateFormatter setTimeZone:self.calendar.timeZone];
-    dateFormatter.dateFormat = @"MMMM d";
+    dateFormatter.dateFormat = @"MMMM d日";
+    [dateFormatter setLocale:zh_Locale];
     self.monthDayDateFormatter = dateFormatter;
     
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setCalendar:self.calendar];
     [dateFormatter setTimeZone:self.calendar.timeZone];
-    dateFormatter.dateFormat = @"MMMM d, yyyy";
+    dateFormatter.dateFormat = @"yyyy年 MMMM d日";
+    [dateFormatter setLocale:zh_Locale];
     self.monthDayYearDateFormatter = dateFormatter;
 }
 
@@ -316,7 +321,7 @@
     {
         timeLabelFrame = CGRectMake(30.0f, 4.0f, 100.0f, 10.0f);
         
-        dateLabelString = @"Yesterday";
+        dateLabelString = @"昨天";
         dateLabelAlpha = 1.0f;
         backgroundFrame = CGRectMake(CGRectGetWidth(self.frame) - 85.0f, 0.0f, 85.0f, CGRectGetHeight(self.frame));
     }
@@ -398,7 +403,9 @@
     point = [_scrollBar convertPoint:point toView:_tableView];
     
     UIView *view = [_tableView hitTest:point withEvent:nil];
-    
+    while (view.superview && ![view.superview isKindOfClass:[UITableViewCell class]]) {
+        view = view.superview;
+    }
     if ([view.superview isKindOfClass:[UITableViewCell class]])
     {
         [self updateDisplayWithCell:(UITableViewCell *)view.superview];

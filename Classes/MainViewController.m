@@ -10,6 +10,7 @@
 #import "MainViewController.h"
 #import "NewProjectViewController.h"
 #import "NewProjectDataSource.h"
+#import "ProjectDetailViewController.h"
 #import "Utility.h"
 
 #define ITEM_SPACING 210.0f
@@ -17,6 +18,7 @@
 
 @interface MainViewController () {
     NewProjectViewController *newProjectViewController_;
+    NSInteger selectedIndex_;
 }
 @property (nonatomic, strong) NSArray *projects;
 @end
@@ -58,16 +60,15 @@
         AddProjectViewController *addProejctView =[[[segue destinationViewController] viewControllers] objectAtIndex:0];
         [addProejctView setDelegate:self];
     }
-    /*
-    else if ([[segue identifier] isEqualToString:@"NewProjectView"]){
-        Project *project = [ Project MR_createEntity];
-        NewProjectDataSource *newProjectDataSource = [[NewProjectDataSource alloc] initWithModel:project];
-        UIViewController *viewContorller =[[[segue destinationViewController] viewControllers] objectAtIndex:0];
-        NewProjectViewController *newProjectView = (NewProjectViewController*)viewContorller;
-        
-        newProjectView.formDataSource = newProjectDataSource;
+    else if ([[segue identifier] isEqualToString:@"showProjectDetailView"]){
+        Project *project = [_projects objectAtIndex:selectedIndex_];
+        if (project) {
+            UIViewController *viewController = [segue destinationViewController];
+            NSLog(@"%@", viewController.title);
+            ProjectDetailViewController *projectDetailViewController = [segue destinationViewController];
+            [projectDetailViewController setProject:project];
+        }
     }
-    */
 }
 
 - (void)projectAddCanceled:(AddProjectViewController *)addProjectView
@@ -107,6 +108,7 @@
         [self performSegueWithIdentifier:@"AddProjectView" sender: self];
     }
     else{
+        selectedIndex_ = index;
         [self performSegueWithIdentifier:@"showProjectDetailView" sender: self];
     }
 }

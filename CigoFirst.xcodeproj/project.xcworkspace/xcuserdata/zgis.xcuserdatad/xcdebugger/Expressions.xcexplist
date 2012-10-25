@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "GLOBAL">
+         <PersistentStrings>
+            <PersistentString
+               value = "kCFLocaleIdentifierKey">
+            </PersistentString>
+            <PersistentString
+               value = "_inputRequestor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[MainViewController prepareForSegue:sender:]:MainViewController.m">
          <PersistentStrings>
             <PersistentString

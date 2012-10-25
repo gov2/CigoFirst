@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Project.h"
+#import "AddEntryViewController.h"
 
-@interface ProjectDetailViewController : UITableViewController
+@interface ProjectDetailViewController : UITableViewController <UITableViewDelegate, UIScrollViewDelegate, AddEntryDelegate>
+
+@property (nonatomic, assign) Project *project;
 
 @end

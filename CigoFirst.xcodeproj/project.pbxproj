@@ -18,6 +18,7 @@
 		F02C2A41162D0E3B00D49F04 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C2A40162D0E3A00D49F04 /* MainViewController.m */; };
 		F02C2A4C162D828900D49F04 /* page.png in Resources */ = {isa = PBXBuildFile; fileRef = F02C2A4B162D828900D49F04 /* page.png */; };
 		F02C2A50162D84E800D49F04 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C2A4F162D84E800D49F04 /* iCarousel.m */; };
+		F0342A9D1636C44D000DD57C /* CigoFirst.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0342A9B1636C44D000DD57C /* CigoFirst.xcdatamodeld */; };
 		F0744EA0162FE37A0083D753 /* libIBAForms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0744E9E162FDAA00083D753 /* libIBAForms.a */; };
 		F0744EC81630EA0D0083D753 /* NewProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0744EC71630EA0D0083D753 /* NewProjectViewController.m */; };
 		F0744F121630EE210083D753 /* NewProjectDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F0744F111630EE210083D753 /* NewProjectDataSource.m */; };
@@ -62,7 +63,6 @@
 		F0D457CE16244768000B6B87 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D457CD16244768000B6B87 /* Default@2x.png */; };
 		F0D457D016244768000B6B87 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0D457CF16244768000B6B87 /* Default-568h@2x.png */; };
 		F0D457D316244768000B6B87 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0D457D116244768000B6B87 /* MainStoryboard_iPhone.storyboard */; };
-		F0D457D916244768000B6B87 /* CigoFirst.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0D457D716244768000B6B87 /* CigoFirst.xcdatamodeld */; };
 		F0D457DC16244768000B6B87 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D457DB16244768000B6B87 /* MasterViewController.m */; };
 		F0D457DF16244768000B6B87 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D457DE16244768000B6B87 /* DetailViewController.m */; };
 		F0D457EF162449E6000B6B87 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D457EE162449E6000B6B87 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -96,6 +96,9 @@
 		F0E678DF163571A7004B2306 /* UINavigationBar+CGDropShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E678DE163571A7004B2306 /* UINavigationBar+CGDropShadow.m */; };
 		F0FDECD616259D0A00EFF6DF /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FDECD516259D0A00EFF6DF /* AddContactViewController.m */; };
 		F0FDECE51625AA2200EFF6DF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FDECE41625AA2200EFF6DF /* User.m */; };
+		F0FE4BEB16383429000BC83F /* prj_entry_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FE4BE916383429000BC83F /* prj_entry_bottom.png */; };
+		F0FE4BEC16383429000BC83F /* prj_entry_top.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FE4BEA16383429000BC83F /* prj_entry_top.png */; };
+		F0FE4BEE1638D0BE000BC83F /* prj_entry_middle.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FE4BED1638D0BE000BC83F /* prj_entry_middle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +138,7 @@
 		F02C2A4B162D828900D49F04 /* page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = page.png; path = Resources/page.png; sourceTree = "<group>"; };
 		F02C2A4E162D84E800D49F04 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		F02C2A4F162D84E800D49F04 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		F0342A9C1636C44D000DD57C /* CigoFirst.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CigoFirst.xcdatamodel; sourceTree = "<group>"; };
 		F0744E96162FDA9F0083D753 /* IBAForms.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IBAForms.xcodeproj; path = ../IBAForms/library/IBAForms.xcodeproj; sourceTree = "<group>"; };
 		F0744EC61630EA0D0083D753 /* NewProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProjectViewController.h; sourceTree = "<group>"; };
 		F0744EC71630EA0D0083D753 /* NewProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProjectViewController.m; sourceTree = "<group>"; };
@@ -215,7 +219,6 @@
 		F0D457CD16244768000B6B87 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Resources/Default@2x.png"; sourceTree = "<group>"; };
 		F0D457CF16244768000B6B87 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		F0D457D216244768000B6B87 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		F0D457D816244768000B6B87 /* CigoFirst.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CigoFirst.xcdatamodel; sourceTree = "<group>"; };
 		F0D457DA16244768000B6B87 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		F0D457DB16244768000B6B87 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		F0D457DD16244768000B6B87 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -265,6 +268,9 @@
 		F0FDECD516259D0A00EFF6DF /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddContactViewController.m; sourceTree = "<group>"; };
 		F0FDECE31625AA2200EFF6DF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		F0FDECE41625AA2200EFF6DF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		F0FE4BE916383429000BC83F /* prj_entry_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prj_entry_bottom.png; path = Resources/prj_entry_bottom.png; sourceTree = "<group>"; };
+		F0FE4BEA16383429000BC83F /* prj_entry_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prj_entry_top.png; path = Resources/prj_entry_top.png; sourceTree = "<group>"; };
+		F0FE4BED1638D0BE000BC83F /* prj_entry_middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prj_entry_middle.png; path = Resources/prj_entry_middle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +304,9 @@
 		F02C2A3A162D039100D49F04 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F0FE4BED1638D0BE000BC83F /* prj_entry_middle.png */,
+				F0FE4BE916383429000BC83F /* prj_entry_bottom.png */,
+				F0FE4BEA16383429000BC83F /* prj_entry_top.png */,
 				F0E678D3163560B8004B2306 /* top_line_bg.png */,
 				F0E678CE163556D2004B2306 /* bgnoise.png */,
 				F0E678C316354B1C004B2306 /* tl_create.png */,
@@ -502,8 +511,8 @@
 		F0D457E516244926000B6B87 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F0342A9B1636C44D000DD57C /* CigoFirst.xcdatamodeld */,
 				F0744F6316311F840083D753 /* Localizable.strings */,
-				F0D457D716244768000B6B87 /* CigoFirst.xcdatamodeld */,
 				F0D457D116244768000B6B87 /* MainStoryboard_iPhone.storyboard */,
 				F082AC2616257A190031528B /* CalculatorView.xib */,
 				F02C2A3A162D039100D49F04 /* Images */,
@@ -848,6 +857,9 @@
 				F0E678CF163556D2004B2306 /* bgnoise.png in Resources */,
 				F0E678D4163560B8004B2306 /* top_line_bg.png in Resources */,
 				F01475F01636B53F006B97D9 /* TimeScroller.bundle in Resources */,
+				F0FE4BEB16383429000BC83F /* prj_entry_bottom.png in Resources */,
+				F0FE4BEC16383429000BC83F /* prj_entry_top.png in Resources */,
+				F0FE4BEE1638D0BE000BC83F /* prj_entry_middle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -860,7 +872,6 @@
 			files = (
 				F0D457C616244768000B6B87 /* main.m in Sources */,
 				F0D457CA16244768000B6B87 /* AppDelegate.m in Sources */,
-				F0D457D916244768000B6B87 /* CigoFirst.xcdatamodeld in Sources */,
 				F0D457DC16244768000B6B87 /* MasterViewController.m in Sources */,
 				F0D457DF16244768000B6B87 /* DetailViewController.m in Sources */,
 				F0D457EF162449E6000B6B87 /* MBProgressHUD.m in Sources */,
@@ -914,6 +925,7 @@
 				F0E678DB16357045004B2306 /* ProjectEntryCell.m in Sources */,
 				F0E678DF163571A7004B2306 /* UINavigationBar+CGDropShadow.m in Sources */,
 				F01475F11636B53F006B97D9 /* TimeScroller.m in Sources */,
+				F0342A9D1636C44D000DD57C /* CigoFirst.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1069,14 +1081,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F0D457D716244768000B6B87 /* CigoFirst.xcdatamodeld */ = {
+		F0342A9B1636C44D000DD57C /* CigoFirst.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F0D457D816244768000B6B87 /* CigoFirst.xcdatamodel */,
+				F0342A9C1636C44D000DD57C /* CigoFirst.xcdatamodel */,
 			);
-			currentVersion = F0D457D816244768000B6B87 /* CigoFirst.xcdatamodel */;
+			currentVersion = F0342A9C1636C44D000DD57C /* CigoFirst.xcdatamodel */;
 			name = CigoFirst.xcdatamodeld;
-			path = CigoFirst/CigoFirst.xcdatamodeld;
+			path = Resources/CigoFirst.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

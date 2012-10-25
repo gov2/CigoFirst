@@ -18,7 +18,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1163" y="164"/>
+            <point key="canvasLocation" x="-1369" y="-60"/>
         </scene>
         <!--Master View Controller - Master-->
         <scene sceneID="18">
@@ -68,7 +68,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="209" y="304"/>
+            <point key="canvasLocation" x="735" y="304"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="d8r-Fr-ooV">
@@ -100,9 +100,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Acz-MZ-q3i" kind="push" identifier="AddEntryView" id="cxy-Kn-NYz"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAt-7I-55u">
                                 <constraints>
@@ -161,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VaZ-zD-6un" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-639" y="148"/>
+            <point key="canvasLocation" x="-905" y="-60"/>
         </scene>
         <!--Add Project View Controller-->
         <scene sceneID="5c2-nA-ZbR">
@@ -333,10 +330,11 @@
         <scene sceneID="trB-pL-egp">
             <objects>
                 <tableViewController id="sc5-x7-Kgr" customClass="ProjectDetailViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OSS-PN-8DD">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" dataMode="static" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OSS-PN-8DD">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="5en-uk-R80">
                                 <cells>
@@ -347,6 +345,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLb-TK-hMS">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="65" id="7RE-vz-BdY"/>
+                                                        <constraint firstAttribute="height" constant="37" id="uKO-uw-rZg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="V8R-6q-iCq" kind="modal" identifier="ShowEntryAddView" modalTransitionStyle="coverVertical" id="8BC-fa-RfH"/>
+                                                    </connections>
+                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="8J3-qG-1sy">
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                                 </imageView>
@@ -354,33 +369,27 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="VLb-TK-hMS" firstAttribute="leading" secondItem="ks5-Gf-Llr" secondAttribute="leading" constant="147" id="6kM-6X-XX6"/>
+                                            <constraint firstItem="VLb-TK-hMS" firstAttribute="top" secondItem="ks5-Gf-Llr" secondAttribute="top" constant="61" id="7Fr-gX-rTK"/>
                                             <constraint firstItem="8J3-qG-1sy" firstAttribute="leading" secondItem="ks5-Gf-Llr" secondAttribute="leading" type="default" id="hH8-AW-BXn"/>
                                             <constraint firstItem="8J3-qG-1sy" firstAttribute="top" secondItem="ks5-Gf-Llr" secondAttribute="top" type="default" id="vDL-Oh-pbd"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="148" id="muA-DU-EVI">
-                                        <rect key="frame" x="0.0" y="160" width="320" height="148"/>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="dVZ-Hs-Q2T">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProjectEntryCell" id="hAp-LJ-hDr">
+                                        <rect key="frame" x="0.0" y="160" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="147"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="TopLeft" image="bgnoise.png" translatesAutoresizingMaskIntoConstraints="NO" id="VuV-0z-SE0">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="89I-Jm-GDv"/>
-                                                        <constraint firstAttribute="height" constant="43" id="jD5-XT-lo4"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="VuV-0z-SE0" firstAttribute="top" secondItem="muA-DU-EVI" secondAttribute="top" type="default" id="Yfu-b2-xHf"/>
-                                            <constraint firstItem="VuV-0z-SE0" firstAttribute="leading" secondItem="muA-DU-EVI" secondAttribute="leading" type="default" id="hvf-lj-wcN"/>
-                                        </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="enN-8a-G57">
-                                        <rect key="frame" x="0.0" y="308" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProjectEntryCell" id="vOb-MJ-Nve">
+                                        <rect key="frame" x="0.0" y="204" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -400,7 +409,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABU-Ac-Xxi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-626" y="753"/>
+            <point key="canvasLocation" x="-750" y="647"/>
         </scene>
         <!--Add Entry View Controller-->
         <scene sceneID="LFP-Ww-qwg">
@@ -431,7 +440,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nap-vM-W76" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-203" y="622"/>
+            <point key="canvasLocation" x="323" y="622"/>
         </scene>
         <!--Add Contact View Controller-->
         <scene sceneID="r2z-w2-1qA">
@@ -612,7 +621,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scL-6F-7cD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1255" y="697"/>
+            <point key="canvasLocation" x="1781" y="697"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aPF-wT-af3">
@@ -630,7 +639,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKX-hW-x11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="697"/>
+            <point key="canvasLocation" x="1360" y="697"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rqt-hP-gio">
@@ -824,12 +833,29 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qzX-q8-F1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="104"/>
+            <point key="canvasLocation" x="1360" y="104"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZMg-55-6IE">
+            <objects>
+                <navigationController id="V8R-6q-iCq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eGI-Jh-T84">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Acz-MZ-q3i" kind="relationship" relationship="rootViewController" id="odm-BD-ki8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="goR-aS-61R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-203" y="622"/>
         </scene>
     </scenes>
     <resources>
         <image name="banner.png" width="320" height="160"/>
-        <image name="bgnoise.png" width="66" height="92"/>
         <image name="useradd.png" width="30" height="30"/>
     </resources>
     <classes>

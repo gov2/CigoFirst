@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <IBAForms/IBAForms.h>
 
-
-@interface User : NSManagedObject
+@interface User : NSManagedObject<IBAPickListOption>
 
 @property (nonatomic, retain) NSNumber * inContacts;
 @property (nonatomic, retain) NSString * name;

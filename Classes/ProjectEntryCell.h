@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 @protocol EGOImageButtonDelegate;
 @interface ProjectEntryCell : UITableViewCell //<EGOImageButtonDelegate>
+{
+    UIImageView *top_;
+    UIImageView *bottom_;
+    UIImageView *middle_;
+}
+@property (nonatomic, assign) NSArray *entries;
 
 @end
