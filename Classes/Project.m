@@ -22,4 +22,10 @@
 @dynamic entries;
 @dynamic users;
 
+- (void)addEntriesObject:(Entry *)value
+{
+    //NSSet *changedObjects = [[NSSet alloc] initWithObjects:&value count:1];
+    //[[self entries] addObject:value];
+}
+
 @end

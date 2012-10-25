@@ -40,6 +40,7 @@
 	// Do any additional setup after loading the view.
     _coverflowControl.decelerationRate = 0.5;
     _coverflowControl.type = iCarouselTypeCoverFlow2;
+    self.title = NSLocalizedString(@"main_view_title", nil);
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -63,9 +64,8 @@
     else if ([[segue identifier] isEqualToString:@"showProjectDetailView"]){
         Project *project = [_projects objectAtIndex:selectedIndex_];
         if (project) {
-            UIViewController *viewController = [segue destinationViewController];
-            NSLog(@"%@", viewController.title);
             ProjectDetailViewController *projectDetailViewController = [segue destinationViewController];
+            projectDetailViewController.title = project.name;
             [projectDetailViewController setProject:project];
         }
     }
@@ -108,7 +108,7 @@
         [self performSegueWithIdentifier:@"AddProjectView" sender: self];
     }
     else{
-        selectedIndex_ = index;
+        selectedIndex_ = index - 1;
         [self performSegueWithIdentifier:@"showProjectDetailView" sender: self];
     }
 }

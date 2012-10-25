@@ -15,6 +15,10 @@
 @interface AddEntryViewController (){
     NSArray *_users;
     NSDictionary *_usersEntry;
+    NSString *_expression;
+    float _currentResult;
+    int _selectedEntryIndex;
+    int _selectedUserIndex;
 }
 
 @end
@@ -40,7 +44,7 @@
     [calView setBackgroundColor:[ UIColor colorWithRed:36 green:37 blue:51 alpha:1]];
     calView.delegate = self;
     [self.view addSubview: calView];
-    _usersEntry = [self initializeDataSource];
+    //_usersEntry = [self initializeDataSource];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,15 +53,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setProject:(Project *)project
+{
+    _users = [project.users allObjects];
+    NSMutableDictionary *userEntryDict = [[NSMutableDictionary alloc] initWithCapacity:[_users count]];
+    for (User *user in _users) {
+        NSMutableArray *userEntry = [[NSMutableArray alloc] init];
+        [userEntryDict setObject:userEntry forKey:user.objectID];
+    }
+    for (Entry *entry in project.entries) {
+        NSMutableArray *userEntry = [userEntryDict objectForKey: entry.user.objectID];
+        [userEntry addObject:entry];
+    }
+    _usersEntry = userEntryDict;
+    _project = project;
+}
 
 #pragma mark - Picker view data source
 - (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     switch (component) {
         case 0:
-            return [_usersEntry count];
+            return [_project.users count];
             break;
         case 1:
-            return [[_usersEntry objectForKey:[[_users objectAtIndex:0] name]] count];
+            return [[_usersEntry objectForKey:[[_users objectAtIndex: _selectedUserIndex] objectID]] count] + 1;
         default:
             return 0;
             break;
@@ -71,10 +90,24 @@
 #pragma mark - Picker view delegate
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     NSInteger selectedRow = -1;
-    if (component > 0) {
-        selectedRow = [pickerView selectedRowInComponent:component - 1];
+    if (component == 0) {
+        User* user = [_users objectAtIndex:row];
+        return user.name;
     }
-    return [NSString stringWithFormat:@"%d[%d][%d]", selectedRow, row, component];
+    
+    selectedRow = [pickerView selectedRowInComponent:component - 1];
+    User* user = [_users objectAtIndex:selectedRow];
+    
+    NSArray *entries = [_usersEntry objectForKey: user.objectID];
+    if (row == entries.count) {
+        return _expression;
+    }
+    else {
+        Entry* entry = [entries objectAtIndex:row];
+        NSString *amount = [NSString stringWithFormat:@"%@", entry.amount];
+        return amount;
+    }
+    
 }
 /*
 - (UIView *)pickerView:(UIPickerView *)pickerView
@@ -85,13 +118,17 @@
 }
 */
 
-- (void)pickerView:(UIPickerView *)pickerView
-      didSelectRow:(NSInteger)row
-       inComponent:(NSInteger)component;
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component;
 {
-    if (component < pickerView.numberOfComponents - 1) {
+    if (component == 0) {
+        _selectedUserIndex = row;
         [pickerView reloadComponent:component + 1];
-        [pickerView selectRow:0 inComponent:component + 1 animated:YES];
+        User* user = [_users objectAtIndex:row];
+        NSArray *entries = [_usersEntry objectForKey: user.objectID];
+        [pickerView selectRow: entries.count inComponent:component + 1 animated:NO];
+    }
+    if (component == 1) {
+        _selectedEntryIndex = row;
     }
 }
 
@@ -108,27 +145,73 @@
     return 175;
 }
 
+#pragma mark - Calculator delegate
+
 - (void)calculator:(CalculatorView *)calculatorView withExpression:(NSString *)expression
 {
-    [self setTitle:expression];
+    //[self setTitle:expression];
+    _expression = expression;
+    [_pickerView reloadComponent:1];
 }
 
 - (void)calculator:(CalculatorView *)calculatorView withResult:(float)result
 {
-    
+    _currentResult = result;
 }
 
-- (NSDictionary *) initializeDataSource
+- (void)calculator:(CalculatorView *)calculatorView withKeyPress:(CGOCalculatorKey)key
 {
-    _users = [User findAll];
-    NSMutableDictionary *entries = [[NSMutableDictionary alloc] initWithCapacity: _users.count];
-    for (User* user in _users) {
-        NSArray *entry = [Entry findByAttribute:@"user" withValue:user];
-        NSMutableArray *me = [[NSMutableArray alloc] initWithArray: entry];
-        [entries setValue: me forKey: user.name];
+    if (key == CGOCalculatorKeyReturn) {
+        User *user = [_users objectAtIndex:_selectedUserIndex];
+        NSMutableArray *entries = [_usersEntry objectForKey: user.objectID];
+        Entry *entry = [Entry MR_createEntity];
+        entry.project = _project;
+        entry.user = user;
+        entry.amount = [NSNumber numberWithFloat: _currentResult];
+        [entries addObject:entry];
+        [_project addEntriesObject:entry];
+        _expression = @"";
+        [_pickerView reloadComponent:1];
+        [_pickerView selectRow: entries.count inComponent:1 animated:NO];
+    }
+}
+
+#pragma ------
+
+- (IBAction)donePressed:(id)sender {
+    NSDate *currentDate = [NSDate date];
+
+    for (Entry *entry in _project.entries) {
+        if (!entry.createTime) {
+            entry.createTime = currentDate;
+        }
     }
     
-    return entries;
+    [[NSManagedObjectContext MR_defaultContext] MR_save];
+    
+    if([self.delegate respondsToSelector:@selector(entryAddFinished:)]) {
+		[self.delegate entryAddFinished:self];
+	}
 }
 
+- (IBAction)cancelPressed:(id)sender {
+    
+    NSMutableArray *willClearEntries = [[NSMutableArray alloc] init];
+    
+    for (Entry* entry in _project.entries) {
+        if (!entry.createTime) {
+            [willClearEntries addObject:entry];
+        }
+    }
+    
+    [_project removeEntries:[NSSet setWithArray:willClearEntries]];
+    
+    if([self.delegate respondsToSelector:@selector(entryAddCanceled:)]) {
+		[self.delegate entryAddCanceled:self];
+	}
+}
+- (void)viewDidUnload {
+    [self setPickerView:nil];
+    [super viewDidUnload];
+}
 @end

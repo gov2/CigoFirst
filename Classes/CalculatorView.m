@@ -28,15 +28,6 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
-
 - (IBAction)buttonOperationPressed:(id)sender {
     currentNumber = (CGFloat)[self.expression floatValue];
     if (currentOperator == 0 && _expression.length > 0) {
@@ -46,8 +37,16 @@
     }
     currentOperator = [sender tag];
     _expression = @"";
-    [self.delegate calculator: self
-               withExpression: [[self floatToString: _result] stringByAppendingString: [self operatorFromInteger:currentOperator]] ];
+    if ([self.delegate respondsToSelector:@selector(calculator:withExpression:)]) {   
+        [self.delegate calculator: self
+               withExpression: [[self floatToString: _result] stringByAppendingString: [self operatorFromInteger:currentOperator]]];
+    }
+    if ([self.delegate respondsToSelector:@selector(calculator:withResult:)]) {
+        [self.delegate calculator:self withResult:_result];
+    }
+    if ([self.delegate respondsToSelector:@selector(calculator:withKeyPress:)]) {
+        [self.delegate calculator:self withKeyPress: [sender tag] + 20];
+    }
 }
 
 -(float)calculate:(float) left by:(int)operator right:(float)right
@@ -133,8 +132,17 @@
             _expression = [_expression stringByAppendingFormat:@"%d", tag];
         }
     }
+    if ([self.delegate respondsToSelector:@selector(calculator:withExpression:)]) {
+        [self.delegate calculator: self withExpression:  self.expression];
+    }
     
-    [self.delegate calculator: self withExpression:  self.expression];
+    if ([self.delegate respondsToSelector:@selector(calculator:withResult:)]) {
+        [self.delegate calculator:self withResult:_expression.floatValue];
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(calculator:withKeyPress:)]) {
+        [self.delegate calculator:self withKeyPress: tag];
+    }
 }
 
 - (IBAction)buttonClearPressed:(id)sender {
@@ -162,8 +170,17 @@
         default:
             break;
     }
+    if ([self.delegate respondsToSelector:@selector(calculator:withExpression:)]) {
+        [self.delegate calculator: self withExpression:  self.expression];
+    }
     
-    [self.delegate calculator: self withExpression:  self.expression];
+    if ([self.delegate respondsToSelector:@selector(calculator:withResult:)]) {
+        [self.delegate calculator:self withResult:_expression.floatValue];
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(calculator:withKeyPress:)]) {
+        [self.delegate calculator:self withKeyPress: tag + 30];
+    }
 }
 
 - (void) reset

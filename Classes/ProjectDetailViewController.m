@@ -9,10 +9,13 @@
 #import "ProjectDetailViewController.h"
 #import "ProjectEntryCell.h"
 #import "Entry.h"
+#import "TimeScroller.h"
+
 #define kDynamicSection 1
 
 @interface ProjectDetailViewController (){
     NSDictionary *dateEntryDictionary;
+    TimeScroller *_timeScroller;
 }
 
 @end
@@ -63,6 +66,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString: @"ShowEntryAddView" ]) {
+        //
+        AddEntryViewController *addEntryViewController =[[[segue destinationViewController] viewControllers] objectAtIndex:0];
+        addEntryViewController.project = _project;
+        [addEntryViewController setDelegate: self];
+    }
+}
+
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
@@ -106,15 +119,6 @@
 }
 
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString: @"addEntryViewController" ]) {
-        //
-        AddEntryViewController *addEntryViewController =[[[segue destinationViewController] viewControllers] objectAtIndex:0];
-        addEntryViewController.delegate = self;
-    }
-}
-
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -130,19 +134,17 @@
         return 160;
     }
     else if (indexPath.row == 0) {
-        return 44;
+        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
     }
     return 88;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger section = indexPath.section;
-    NSInteger row = indexPath.row;
-    NSLog(@"%d, %d", section, row);
-    if (indexPath.section != 1) {
+    if (indexPath.section != 1 || indexPath.row == 0) {
         return [super tableView:tableView cellForRowAtIndexPath:indexPath];
     }
+    
     
     ProjectEntryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProjectEntryCell"];
     if(!cell)
@@ -158,7 +160,7 @@
     if (section != kDynamicSection) {
         return [super tableView:tableView numberOfRowsInSection:section];
     }
-    return dateEntryDictionary.count + 1;
+    return dateEntryDictionary.count + 15;
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -186,6 +188,37 @@
     } else {
         return [super tableView:tableView indentationLevelForRowAtIndexPath:indexPath];
     }
+}
+
+#pragma mark - ScrollView delegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [_timeScroller scrollViewDidScroll];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [_timeScroller scrollViewDidEndDecelerating];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [_timeScroller scrollViewWillBeginDragging];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (!decelerate) {
+        [_timeScroller scrollViewDidEndDecelerating];
+    }
+}
+
+#pragma mark - Add Entry delegate
+- (void)entryAddCanceled:(AddEntryViewController *)addEntryViewController
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)entryAddFinished:(AddEntryViewController *)addEntryViewController
+{
+    [self.tableView reloadData];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

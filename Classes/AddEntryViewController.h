@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Project.h"
+#import "CalculatorView.h"  
 
 @protocol  CalculatorDelegate, AddEntryDelegate;
 
 @interface AddEntryViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, CalculatorDelegate>
-@property (nonatomic, weak) id<AddEntryDelegate> delegate;
+- (IBAction)donePressed:(id)sender;
+- (IBAction)cancelPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (nonatomic, assign) id<AddEntryDelegate> delegate;
+@property (nonatomic, assign) Project *project;
 @end
 
 @protocol AddEntryDelegate <NSObject>

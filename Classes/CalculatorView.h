@@ -8,6 +8,29 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, CGOCalculatorKey) {
+    CGOCalculatorKeyZero = 0,
+    CGOCalculatorKeyOne,
+    CGOCalculatorKeyTwo,
+    CGOCalculatorKeyThree,
+    CGOCalculatorKeyFour,
+    CGOCalculatorKeyFive,
+    CGOCalculatorKeySix,
+    CGOCalculatorKeySeven,
+    CGOCalculatorKeyEight,
+    CGOCalculatorKeyNine,
+    CGOCalculatorKeyDot,
+    CGOCalculatorKeyReturn = 20,
+    CGOCalculatorKeyAddtion,
+    CGOCalculatorKeySubstraction,
+    CGOCalculatorKeyMultiplication,
+    CGOCalculatorKeyDivision,
+    CGOCalculatorKeyBackspace = 30,
+    CGOCalculatorKeyClear,
+    CGOCalculatorKeyAllClear
+};
+
+
 @protocol CalculatorDelegate;
 @interface CalculatorView : UIView {
     float currentNumber;
@@ -29,5 +52,5 @@
 @optional
 - (void) calculator:(CalculatorView *)calculatorView withExpression:(NSString *)expression;
 - (void) calculator:(CalculatorView *)calculatorView withResult:(float)result;
-
+- (void) calculator:(CalculatorView *)calculatorView withKeyPress:(CGOCalculatorKey)key;
 @end

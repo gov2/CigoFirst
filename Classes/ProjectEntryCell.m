@@ -19,9 +19,9 @@
         [self addSubview:top_];
         middle_ = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"prj_entry_middle.png"]];
         [middle_ setFrame:CGRectMake(0, 44, 320, self.frame.size.height - 88)];
-        [self addSubview:middle_];
+        // [self addSubview:middle_];
         bottom_ = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"prj_entry_bottom.png"]];
-        [bottom_ setFrame: CGRectMake(0, self.frame.size.height - 44, 320, 44)];
+        [bottom_ setFrame: CGRectMake(0, 44, 320, 44)];
         [self addSubview:bottom_];
     }
     return self;
