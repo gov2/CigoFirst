@@ -159,6 +159,12 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     [_contentView addGestureRecognizer:panGesture];
     [panGesture release];
     
+    // Add by ybog@2012-10-26
+    UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(didLongPress:)];
+    [_contentView addGestureRecognizer:longPressRecognizer];
+    [longPressRecognizer release];
+    // End ybog
+    
 #else
     
     [_contentView setWantsLayer:YES];

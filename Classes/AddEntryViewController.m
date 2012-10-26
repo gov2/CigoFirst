@@ -38,8 +38,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    CalculatorView *calView = [[CalculatorView alloc] initWithFrame:CGRectMake(0, 216, 320, 200)];
-    [calView setFrame:CGRectMake(0, 238, 320, 200)];
+    CalculatorView *calView = [[CalculatorView alloc] initWithFrame:CGRectMake(0, 240, 320, 200)];
+    [calView setFrame:CGRectMake(0, 260, 320, 200)];
     [calView setBackgroundColor:[UIColor clearColor]];
     [calView setBackgroundColor:[ UIColor colorWithRed:36 green:37 blue:51 alpha:1]];
     calView.delegate = self;

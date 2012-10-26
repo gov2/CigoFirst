@@ -10,6 +10,11 @@
 
 #import "MasterViewController.h"
 #import "Utility.h"
+#import "UserGuideViewController.h" 
+
+@interface AppDelegate(Private) <UserGuideDelegate>
+
+@end
 
 #pragma mark Private Interface
 
@@ -20,29 +25,35 @@
     //Magical Record
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"CigoFirst.sqlite"];
     
-    // Side bar
-    // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
-        
-    } else {
-        //UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-        //MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
-        //controller.managedObjectContext = self.managedObjectContext;
+    //增加标识，用于判断是否是第一次启动应用...
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"everLaunched"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+    }
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
+        UserGuideViewController *appStartController = [[UserGuideViewController alloc] init];
+        appStartController.delegate = self;
+        self.window.rootViewController = appStartController;
+    }else {
         UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
         navigationController.title = NSLocalizedString(@"main_view_title", nil);
-//        navigationController.navigationBar.tintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"top_line_bg.png"]];
-//        //navigationController.navigationBar.alpha = 1.0f;
-//        navigationController.navigationBar.translucent = YES;
-//        NSDictionary *titleTextDict = [NSDictionary dictionaryWithObjectsAndKeys:
-//                                       [UIColor blackColor], UITextAttributeTextColor,
-//                                       [UIColor clearColor], UITextAttributeTextShadowColor,
-//                                       nil];
-//        navigationController.navigationBar.titleTextAttributes = titleTextDict;
-        }
+    }
+        
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
+    
+    // Side bar
+    // Override point for customization after application launch.
     return YES;
+}
+
+- (NSArray *)userGuideImageArray:(UserGuideViewController *)view
+{
+    return @[
+        [UIImage imageNamed:@"w1.png"],
+        [UIImage imageNamed:@"w2.png"],
+        [UIImage imageNamed:@"w3.png"]
+    ];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

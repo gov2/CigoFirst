@@ -12,6 +12,7 @@
 #import "TimeScroller.h"
 
 #define kDynamicSection 1
+#define kBannerYOffset -22
 
 @interface ProjectDetailViewController (){
     NSDictionary *_dateEntryDictionary;
@@ -81,7 +82,7 @@
     NSMutableDictionary *entryDict = [[NSMutableDictionary alloc]init];
     NSDate *currentDate;
     NSSet *entrySet = project.entries;
-    NSSortDescriptor *createDateDescriptor = [[NSSortDescriptor alloc]initWithKey:@"createTime" ascending:YES];
+    NSSortDescriptor *createDateDescriptor = [[NSSortDescriptor alloc]initWithKey:@"createTime" ascending:NO];
     NSArray *sortedArray = [entrySet sortedArrayUsingDescriptors:@[createDateDescriptor]];
     NSMutableArray *dateEntry = [[NSMutableArray alloc]init];
     NSMutableArray *dateArray = [[NSMutableArray alloc]init];
@@ -99,7 +100,9 @@
             currentDate = nil;
         }
     }
-    [entryDict setObject:dateEntry forKey:currentDate.copy];
+    if (currentDate != nil) {
+        [entryDict setObject:dateEntry forKey:currentDate.copy];
+    }
     _dateArray = dateArray;
     _dateEntryDictionary = entryDict;
     _project = project;
@@ -202,6 +205,18 @@
 #pragma mark - ScrollView delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [_timeScroller scrollViewDidScroll];
+    CGFloat y  = scrollView.contentOffset.y;
+    CGFloat topHeight = CGRectGetHeight(_topView.frame);
+    NSLog(@"%f", y);
+    if (y <= -44) {
+        [_topView setFrame:CGRectMake(0, scrollView.contentOffset.y + 44, 320, topHeight)];
+    }
+    else if (y > topHeight - 44 - kBannerYOffset) {
+        [_topView setFrame:CGRectMake(0, scrollView.contentOffset.y + 44 - topHeight + kBannerYOffset, 320, topHeight)];
+    }
+    else {
+        [_topView setFrame:CGRectMake(0, 0, 320, topHeight)];
+    }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {

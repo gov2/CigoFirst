@@ -146,7 +146,7 @@
                                 <segue destination="12" kind="push" id="Mx5-Ol-tPk"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="qcE-PF-b1O">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="qcE-PF-b1O">
                             <connections>
                                 <action selector="newProjectPressed:" destination="fWR-Hk-4Sg" id="Crh-m3-QET"/>
                             </connections>
@@ -414,7 +414,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABU-Ac-Xxi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-750" y="647"/>
+            <point key="canvasLocation" x="-702" y="535"/>
         </scene>
         <!--Add Entry View Controller-->
         <scene sceneID="LFP-Ww-qwg">
@@ -437,8 +437,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Lcn-MD-ehw" firstAttribute="leading" secondItem="vpk-oq-XiY" secondAttribute="leading" type="default" id="24k-1q-28s"/>
+                            <constraint firstItem="Lcn-MD-ehw" firstAttribute="top" secondItem="vpk-oq-XiY" secondAttribute="top" constant="44" id="NaQ-KB-mfw"/>
                             <constraint firstItem="Lcn-MD-ehw" firstAttribute="trailing" secondItem="vpk-oq-XiY" secondAttribute="trailing" type="default" id="Ow0-CW-abg"/>
-                            <constraint firstItem="Lcn-MD-ehw" firstAttribute="top" secondItem="vpk-oq-XiY" secondAttribute="top" type="default" id="SxX-mz-GIC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nSG-R8-06s">
@@ -459,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nap-vM-W76" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="323" y="622"/>
+            <point key="canvasLocation" x="179" y="570"/>
         </scene>
         <!--Add Contact View Controller-->
         <scene sceneID="r2z-w2-1qA">
@@ -870,7 +870,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goR-aS-61R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-203" y="622"/>
+            <point key="canvasLocation" x="-251" y="562"/>
         </scene>
     </scenes>
     <resources>
