@@ -337,11 +337,11 @@
                         <sections>
                             <tableViewSection id="5en-uk-R80">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="160" id="ks5-Gf-Llr">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="116" id="ks5-Gf-Llr">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="159"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLb-TK-hMS">
@@ -361,16 +361,19 @@
                                                         <segue destination="V8R-6q-iCq" kind="modal" identifier="ShowEntryAddView" modalTransitionStyle="coverVertical" id="8BC-fa-RfH"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="prj_entry_new.png" translatesAutoresizingMaskIntoConstraints="NO" id="rbZ-hB-sJL"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="prj_entry_new.png" translatesAutoresizingMaskIntoConstraints="NO" id="rbZ-hB-sJL">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="160" id="T8m-TB-OUK"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="VLb-TK-hMS" firstAttribute="top" secondItem="ks5-Gf-Llr" secondAttribute="top" constant="61" id="7Fr-gX-rTK"/>
                                             <constraint firstItem="rbZ-hB-sJL" firstAttribute="top" secondItem="ks5-Gf-Llr" secondAttribute="top" type="default" id="Pe2-Vp-JOw"/>
                                             <constraint firstItem="rbZ-hB-sJL" firstAttribute="leading" secondItem="ks5-Gf-Llr" secondAttribute="leading" type="default" id="RXQ-9k-ceP"/>
-                                            <constraint firstItem="rbZ-hB-sJL" firstAttribute="bottom" secondItem="ks5-Gf-Llr" secondAttribute="bottom" type="default" id="eWI-8j-OUt"/>
                                             <constraint firstItem="VLb-TK-hMS" firstAttribute="leading" secondItem="ks5-Gf-Llr" secondAttribute="leading" constant="147" id="fvA-dD-VWx"/>
+                                            <constraint firstItem="VLb-TK-hMS" firstAttribute="top" secondItem="ks5-Gf-Llr" secondAttribute="top" constant="38" id="tWa-Tg-idB"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -378,7 +381,7 @@
                             <tableViewSection id="dVZ-Hs-Q2T">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewEntryCell" id="hAp-LJ-hDr">
-                                        <rect key="frame" x="0.0" y="160" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="116" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -394,7 +397,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProjectEntryCell" id="vOb-MJ-Nve">
-                                        <rect key="frame" x="0.0" y="204" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="160" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
