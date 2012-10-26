@@ -2121,6 +2121,12 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
     }
 }
 
+//Add by ybog@2012-10-26
+- (void)didLongPress:(UILongPressGestureRecognizer *) longPressGesture
+{
+    
+}
+
 #else
 
 
