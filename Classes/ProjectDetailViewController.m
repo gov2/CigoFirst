@@ -12,7 +12,7 @@
 #import "TimeScroller.h"
 
 #define kDynamicSection 1
-#define kBannerYOffset -22
+#define kBannerYOffset 44
 
 @interface ProjectDetailViewController (){
     NSDictionary *_dateEntryDictionary;
