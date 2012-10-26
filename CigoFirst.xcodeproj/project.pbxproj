@@ -266,8 +266,8 @@
 		F0D4583216245623000B6B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F0E1E4B5163A278D001AEE1B /* UserGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserGuideViewController.h; sourceTree = "<group>"; };
 		F0E1E4B6163A278D001AEE1B /* UserGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserGuideViewController.m; sourceTree = "<group>"; };
-		F0E1E4B8163A3439001AEE1B /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		F0E1E4BA163A347D001AEE1B /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		F0E1E4B8163A3439001AEE1B /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icon.png; sourceTree = "<group>"; };
+		F0E1E4BA163A347D001AEE1B /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/icon@2x.png"; sourceTree = "<group>"; };
 		F0E678C116354891004B2306 /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner.png; path = "../../../Desktop/设计界面材料/banner.png"; sourceTree = "<group>"; };
 		F0E678C316354B1C004B2306 /* tl_create.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tl_create.png; path = "../../../Desktop/设计界面材料/tl_create.png"; sourceTree = "<group>"; };
 		F0E678CE163556D2004B2306 /* bgnoise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bgnoise.png; path = "../../../Desktop/设计界面材料/bgnoise.png"; sourceTree = "<group>"; };
